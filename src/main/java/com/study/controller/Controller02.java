@@ -20,4 +20,8 @@ public class Controller02 {
     }
 
     // 경로 : /main2/sub3
+    @RequestMapping("/sub3")
+    public void sub3() {
+        System.out.println("Controller02.sub3");
+    }
 }
