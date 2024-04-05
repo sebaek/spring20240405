@@ -49,6 +49,15 @@ public class Controller05 {
     // 145.0 ~ 190.0 중간 키
     // 190 ~ 큰 키
 
-    // todo: height 요청 파라미터를 double 타입으로 활요하는 메소드 작성
-    
+    // todo: height 요청 파라미터를 double 타입으로 활용하는 메소드 작성
+    @RequestMapping("sub4")
+    public void method4(@RequestParam("height") double param) {
+        if (param < 145.0) {
+            System.out.println("작은 키 스타일");
+        } else if (param < 190.0) {
+            System.out.println("중간 키 스타일");
+        } else {
+            System.out.println("큰 키 스타일");
+        }
+    }
 }
