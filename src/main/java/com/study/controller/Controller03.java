@@ -44,10 +44,13 @@ public class Controller03 {
     // todo: 아래 메소드 실행될 수 있는 경로 작성
     // /main3/sub3?country&city
     // /main3/sub3?city&country
+    // /main3/sub3?city=seoul&country=korea
+    // /main3/sub3?city=tokyo&country=japan
+    // /main3/sub3?country=uk&city=london
     @RequestMapping(value = "sub3", params = {"country", "city"})
     public void method6() {
         System.out.println("Controller03.method6");
     }
 
-    
+
 }
