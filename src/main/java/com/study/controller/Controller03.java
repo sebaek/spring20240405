@@ -35,11 +35,19 @@ public class Controller03 {
 
     // /main3/sub3?address&city
     // todo: method5 작성
+    @RequestMapping(value = "sub3", params = {"address", "city"})
+    public void method5() {
+        System.out.println("Controller03.method5");
+    }
 
 
     // todo: 아래 메소드 실행될 수 있는 경로 작성
+    // /main3/sub3?country&city
+    // /main3/sub3?city&country
     @RequestMapping(value = "sub3", params = {"country", "city"})
     public void method6() {
         System.out.println("Controller03.method6");
     }
+
+    
 }
