@@ -57,4 +57,42 @@ public class Controller04 {
     // /main4/sub4?city=london
 
     // 콘솔에 도시 정보 출력
+    @RequestMapping("sub4")
+    public void sub4(WebRequest request) {
+        String value = request.getParameter("city");
+
+        if (value != null) {
+            System.out.println(value + "에 관한 정보 출력 ");
+        }
+    }
+
+    // /main4/sub5?age=13
+    // /main4/sub5?age=19
+    // /main4/sub5?age=35
+    @RequestMapping("sub5")
+    public void sub5(WebRequest request) {
+        String value = request.getParameter("age");
+        int age = Integer.parseInt(value);
+
+        if (age < 13) {
+            System.out.println("유아용 정보 검색");
+        } else if (age < 19) {
+            System.out.println("청소년 정보 검색");
+        } else {
+            System.out.println("성인 정보 검색");
+        }
+    }
+
+    @RequestMapping("sub6")
+    public void sub6(WebRequest request) {
+        // todo: 몸무게 weight 파라미터를 double로 변경
+
+        if (weight < 50.0) {
+            System.out.println("저체중");
+        } else if (weight < 90.0) {
+            System.out.println("보통");
+        } else {
+            System.out.println("과체중");
+        }
+    }
 }
