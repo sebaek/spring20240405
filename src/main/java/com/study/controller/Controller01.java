@@ -1,4 +1,4 @@
-package com.study;
+package com.study.controller;
 
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Controller;
@@ -44,5 +44,8 @@ public class Controller01 {
 
     // 요청 메세지 첫 줄이 다음과 같으면 실행되는 메소드 작성
     // GET /main1/sub2 HTTP/1.1
-    
+    @RequestMapping("/main1/sub2")
+    public void method3() {
+        System.out.println("Controller01.method3");
+    }
 }
