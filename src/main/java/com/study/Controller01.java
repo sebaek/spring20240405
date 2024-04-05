@@ -34,4 +34,15 @@ public class Controller01 {
         writer.print(result);
 
     }
+
+    // 요청 메세지 첫 줄이 다음과 같으면 실행
+    // GET /main1/sub1 HTTP/1.1
+    @RequestMapping(value = "/main1/sub1")
+    public void method2() {
+        System.out.println("Controller01.method2");
+    }
+
+    // 요청 메세지 첫 줄이 다음과 같으면 실행되는 메소드 작성
+    // GET /main1/sub2 HTTP/1.1
+    
 }
