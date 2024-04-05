@@ -83,9 +83,14 @@ public class Controller04 {
         }
     }
 
+    // /main4/sub6?weight=45.5
+    // /main4/sub6?weight=80.7
+    // /main4/sub6?weight=120.3
     @RequestMapping("sub6")
     public void sub6(WebRequest request) {
         // todo: 몸무게 weight 파라미터를 double로 변경
+        String parameter = request.getParameter("weight");
+        double weight = Double.parseDouble(parameter);
 
         if (weight < 50.0) {
             System.out.println("저체중");
