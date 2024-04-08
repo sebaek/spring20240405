@@ -84,4 +84,10 @@ public class Controller08 {
 
         // jsp 완성해서 위 6개의 값이 모두 출력되도록
     }
+
+    @RequestMapping("sub8")
+    public void method8(Model model) {
+        model.addAttribute("numbers", List.of(500.0, 3.14));
+        model.addAttribute("cities", List.of("서울", "런던", "뉴욕"));
+    }
 }
