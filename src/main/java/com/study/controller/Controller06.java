@@ -99,5 +99,10 @@ public class Controller06 {
     // /main6/sub9?city=서울
     // /main6/sub9?city=서울&city=부산
     // todo: method9 작성
+    @RequestMapping("sub9")
+    public void method9(String[] city, Integer[] age) {
+        System.out.println("city = " + Arrays.toString(city));
+        System.out.println("age = " + Arrays.toString(age));
+    }
 }
 
