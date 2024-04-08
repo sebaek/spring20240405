@@ -27,4 +27,10 @@ public class Controller08 {
 
         // todo : 적절한 jsp를 작성해서 "서울", "신촌" 출력되도록
     }
+
+    @RequestMapping("sub3")
+    public void method3(Model model) {
+        model.addAttribute("name", "김민재");
+        model.addAttribute("age", 33);
+    }
 }
