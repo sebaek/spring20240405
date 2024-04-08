@@ -28,4 +28,23 @@ public class Controller07 {
         resp.getWriter().print(result);
 
     }
+
+    // /main7/sub2
+    @RequestMapping("sub2")
+    public String method2() {
+        // 요청 정보 분석/가공
+        // 비즈니스 로직 처리
+        // 결과를 모델에 담고
+        // view로 포워딩 (view이름 리턴)
+        return "view1";
+    }
 }
+
+
+
+
+
+
+
+
+
