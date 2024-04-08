@@ -76,9 +76,13 @@ public class Controller07 {
         // view : /WEB-INF/view/main7/sub7.jsp
     }
 
-    // TODO: /main7/sub8로 요청왔을 때 일하는 method8 작성
+    // TODO: /main7/sub8로 요청왔을 때 일하는 method8 작성, jsp도 작성
     // 이 메소드는 /WEB-INF/view/main7/sub8.jsp로 포워드 하도록
-    
+    @RequestMapping("sub8")
+    public void method8() {
+        System.out.println("Controller07.method8");
+    }
+
 }
 
 
