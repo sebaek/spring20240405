@@ -3,6 +3,7 @@ package com.study.controller;
 import com.study.domain.MyBean091;
 import com.study.domain.MyBean092;
 import com.study.domain.MyBean093;
+import com.study.domain.MyBean094;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,6 +46,18 @@ public class Controller09 {
         model.addAttribute("member1", obj1);
         model.addAttribute("member2", obj2);
         // todo: jsp 만들기
+    }
+
+    @RequestMapping("sub4")
+    public void sub4(Model model) {
+        MyBean094 obj1 = new MyBean094();
+        obj1.setModelNumber("k5");
+        obj1.setProductPrice(5000);
+        obj1.setWeight(2400.50);
+        obj1.setName("kia");
+        obj1.setUsed(true);
+
+        model.addAttribute("car", obj1);
     }
 
 }
