@@ -38,6 +38,20 @@ public class Controller07 {
         // view로 포워딩 (view이름 리턴)
         return "view1";
     }
+
+    @RequestMapping("sub3")
+    public String method3() {
+        return "view2";
+        // /WEB-INF/view/view2.jsp 로 포워딩
+    }
+
+    @RequestMapping("sub4")
+    public String method4() {
+        return "view3";
+        // /WEB-INF/view/view3.jsp 로 포워딩
+        // todo: view3.jsp 만들기
+    }
+
 }
 
 
