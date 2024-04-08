@@ -33,4 +33,34 @@ public class Controller08 {
         model.addAttribute("name", "김민재");
         model.addAttribute("age", 33);
     }
+
+    @RequestMapping("sub4")
+    public void method4(Model model) {
+        // model attribute의 name : String
+        // model attribute의 value : Object
+
+        // 따라서 model attribute의 value는 무엇이든 될 수 있다.
+        // 자주 사용하는 타입
+        // String, 기본타입(Wrapper)
+        // 배열, List, Map
+        // JavaBeans
+
+        // 배열
+        model.addAttribute("car",
+                new String[]{"tesla", "kia", "hyundai"});
+
+
+    }
+
+    @RequestMapping("sub5")
+    public void method5(Model model) {
+        model.addAttribute("cities",
+                new String[]{"서울", "대구", "부산"});
+        model.addAttribute("countries",
+                new String[]{"한국", "미국", "케냐"});
+
+        // TODO : 적절한 jsp 작성 후
+        // 서울, 대구, 부산, 한국, 미국, 케냐
+
+    }
 }
