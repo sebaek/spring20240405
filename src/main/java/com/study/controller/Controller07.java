@@ -52,6 +52,16 @@ public class Controller07 {
         // todo: view3.jsp 만들기
     }
 
+    // /main7/sub5
+    @RequestMapping("sub5")
+    public String method5() {
+        return "/main7/sub5"; // 같은 경우가 많음
+    }
+
+    // TODO:
+    // /main7/sub6 요청을 처리하는 메소드 작성
+    // /WEB-INF/view/main7/sub6.jsp 가 응답
+
 }
 
 
