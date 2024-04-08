@@ -55,7 +55,8 @@ public class Controller07 {
     // /main7/sub5
     @RequestMapping("sub5")
     public String method5() {
-        return "/main7/sub5"; // 같은 경우가 많음
+        // 요청 경로와 view 이름이 같은 경우가 많음
+        return "/main7/sub5";
     }
 
     // TODO:
