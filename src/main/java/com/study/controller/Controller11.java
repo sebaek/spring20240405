@@ -14,7 +14,9 @@ public class Controller11 {
 
         model.addAttribute("age1", 15);
         model.addAttribute("age2", "30");
-        
+
+        model.addAttribute("quantity", 30);
+        model.addAttribute("price", 1.5);
         // /WEB-INF/view/main11/sub1.jsp
     }
 }

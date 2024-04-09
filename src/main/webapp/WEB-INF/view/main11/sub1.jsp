@@ -88,6 +88,11 @@
 <p>${false ? "hello" : "world"}</p>
 <p>${age1 ge 20 ? "투표가능" : "투표불가능"}</p>
 <p>${age2 ge 20 ? "투표가능" : "투표불가능"}</p>
+
+<hr>
+<p>가격이 ${price}원인 물건 ${quantity}개의
+    총가격은 ${quantity * price}원 이다.
+</p>
 </body>
 </html>
 
