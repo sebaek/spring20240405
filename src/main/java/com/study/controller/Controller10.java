@@ -66,6 +66,8 @@ public class Controller10 {
         model.addAttribute("number1", 1);
         model.addAttribute("two", 2);
         model.addAttribute("three", "3");
+        model.addAttribute("data1", "son");
+        model.addAttribute("data2", "lee");
     }
 }
 
