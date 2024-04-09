@@ -66,8 +66,17 @@ public class Controller10 {
         model.addAttribute("number1", 1);
         model.addAttribute("two", 2);
         model.addAttribute("three", "3");
+        model.addAttribute("3", 30);
+        model.addAttribute("삼", 33);
         model.addAttribute("data1", "son");
         model.addAttribute("data2", "lee");
+    }
+
+    @RequestMapping("sub5")
+    public void method5(Model model) {
+        model.addAttribute("data", "값 1");
+        model.addAttribute("데이타", "값 2");
+        model.addAttribute("3", "삼");
     }
 }
 

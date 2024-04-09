@@ -18,5 +18,8 @@
 <p>${list1[0][data1]}</p>
 <%--paris--%>
 <p>${list1[0][data2]}</p>
+
+<p>${3}</p>
+<p>${삼}</p>
 </body>
 </html>
