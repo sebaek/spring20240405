@@ -17,5 +17,18 @@
         <p>otherwise 부분</p>
     </c:otherwise>
 </c:choose>
+
+<hr>
+<c:choose>
+    <c:when test="${age < 13}">
+        <p>어린이용 콘텐츠</p>
+    </c:when>
+    <c:when test="${age < 20}">
+        <p>청소년용 콘텐츠</p>
+    </c:when>
+    <c:otherwise>
+        <p>성인용 콘텐츠</p>
+    </c:otherwise>
+</c:choose>
 </body>
 </html>

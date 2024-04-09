@@ -37,9 +37,9 @@ public class Controller12 {
 
     @RequestMapping("sub2")
     public void method2(Model model) {
-        model.addAttribute("age", 3); // 어린이용 콘텐츠
+//        model.addAttribute("age", 3); // 어린이용 콘텐츠
 //        model.addAttribute("age", 13); // 청소년용 콘텐츠
 //        model.addAttribute("age", 23); // 성인용 콘텐츠
-//        model.addAttribute("age", 33); // 성인용 콘텐츠
+        model.addAttribute("age", 33); // 성인용 콘텐츠
     }
 }
