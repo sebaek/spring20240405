@@ -106,6 +106,14 @@ public class Controller10 {
         model.addAttribute("myList", data);
     }
 
+    @RequestMapping("sub7")
+    public void method7(Model model) {
+        var list = new ArrayList<MyBean102>();
+        // todo: 코드작성 및 MyBean102 클래스 만들기
+        
+        model.addAttribute("cars", list);
+    }
+
 }
 
 
