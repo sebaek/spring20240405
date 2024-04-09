@@ -53,4 +53,27 @@ public class Controller10 {
         model.addAttribute("myAttr3", "민재");
         model.addAttribute("jh", "강인");
     }
+
+    @RequestMapping("sub4")
+    public void method4(Model model) {
+        var data = new ArrayList<Map>();
+        data.add(Map.of("son", "london", "lee", "paris"));
+        data.add(Map.of("korea", "seoul", "uk", "london"));
+        data.add(Map.of("부산", "해운대"));
+        data.add(Map.of("서울", "강남"));
+
+        model.addAttribute("list1", data);
+        model.addAttribute("number1", 1);
+        model.addAttribute("two", 2);
+        model.addAttribute("three", "3");
+    }
 }
+
+
+
+
+
+
+
+
+
