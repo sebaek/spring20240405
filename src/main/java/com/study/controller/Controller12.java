@@ -17,9 +17,9 @@ public class Controller12 {
         model.addAttribute("products", List.of());
 //        model.addAttribute("products", List.of("Apple", "Banana"));
 
-        model.addAttribute("member",
-                Map.of("country", "korea",
-                        "age", 30));
+//        model.addAttribute("member",
+//                Map.of("country", "korea",
+//                        "age", 30));
 
 //        model.addAttribute("member",
 //                Map.of("country", "korea",
@@ -29,9 +29,9 @@ public class Controller12 {
 //                Map.of("country", "us",
 //                        "age", 30));
 //
-//        model.addAttribute("member",
-//                Map.of("country", "us",
-//                        "age", 15));
+        model.addAttribute("member",
+                Map.of("country", "us",
+                        "age", 15));
         // /main12/sub1.jsp
     }
 }

@@ -37,5 +37,16 @@
 <c:if test="${not result}">
     <p>출력2</p>
 </c:if>
+
+<hr>
+<h4>한국인이고 20살 이상일 때만 투표 가능</h4>
+<c:if test="${member.country == 'korea' and member.age >= 20}"
+      var="votable">
+    <p>투표 가능</p>
+</c:if>
+<c:if test='${not votable}'>
+    <p>투표 불가능</p>
+</c:if>
+
 </body>
 </html>
