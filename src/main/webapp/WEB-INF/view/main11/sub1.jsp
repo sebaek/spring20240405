@@ -78,7 +78,9 @@
 <p>${false or true}</p>
 <p>${false or false}</p>
 
-
+<h3>삼항연산자</h3>
+<p>${true ? "hello" : "world"}</p>
+<p>${false ? "hello" : "world"}</p>
 </body>
 </html>
 
