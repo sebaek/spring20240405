@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean101;
+import com.study.domain.MyBean102;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -110,7 +111,24 @@ public class Controller10 {
     public void method7(Model model) {
         var list = new ArrayList<MyBean102>();
         // todo: 코드작성 및 MyBean102 클래스 만들기
+        MyBean102 e1 = new MyBean102();
+        MyBean102 e2 = new MyBean102();
+        MyBean102 e3 = new MyBean102();
         
+        e1.setColor("white");
+        e1.setModelName("tesla");
+        e1.setPrice(30.50);
+        e2.setColor("black");
+        e2.setModelName("kia");
+        e2.setPrice(60.12);
+        e3.setColor("red");
+        e3.setModelName("volvo");
+        e3.setPrice(70.13);
+
+        list.add(e1);
+        list.add(e2);
+        list.add(e3);
+
         model.addAttribute("cars", list);
     }
 
