@@ -1,5 +1,6 @@
 package com.study.controller;
 
+import com.study.domain.MyBean101;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,6 +79,33 @@ public class Controller10 {
         model.addAttribute("데이타", "값 2");
         model.addAttribute("3", "삼");
     }
+
+    @RequestMapping("sub6")
+    public void method6(Model model) {
+        var data = new ArrayList<MyBean101>();
+        MyBean101 e1 = new MyBean101();
+        MyBean101 e2 = new MyBean101();
+        MyBean101 e3 = new MyBean101();
+
+        e1.setName("흥민");
+        e1.setAge(18);
+        e1.setAddress("런던");
+
+        e2.setName("강인");
+        e2.setAge(30);
+        e2.setAddress("파리");
+
+        e3.setName("정후");
+        e3.setAge(40);
+        e3.setAddress("샌프란시스코");
+
+        data.add(e1);
+        data.add(e2);
+        data.add(e3);
+
+        model.addAttribute("myList", data);
+    }
+
 }
 
 
