@@ -34,18 +34,23 @@
 
 <h3>비교연산 >, <, >=, <=, ==</h3>
 <p>${5 > 3}</p>
+<%--greater than--%>
 <p>${5 gt 3}</p>
 
 <p>${5 < 3}</p>
+<%--less than--%>
 <p>${5 lt 3}</p>
 
 <p>${5 >= 3}</p>
+<%--greater than equals--%>
 <p>${5 ge 3}</p>
 
 <p>${5 <= 3}</p>
+<%--less than equals--%>
 <p>${5 le 3}</p>
 
 <p>${5 == 3}</p>
+<%--equals--%>
 <p>${5 eq 3}</p>
 
 <p>${"hello" < "spring"}</p>
