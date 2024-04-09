@@ -42,4 +42,9 @@ public class Controller12 {
 //        model.addAttribute("age", 23); // 성인용 콘텐츠
         model.addAttribute("age", 33); // 성인용 콘텐츠
     }
+
+    @RequestMapping("sub3")
+    public void method3(Model model) {
+        model.addAttribute("dan", 6);
+    }
 }
