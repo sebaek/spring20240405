@@ -14,5 +14,9 @@
     <p>투표 불가능</p>
 </c:if>
 
+<%-- products 속성이 빈 리스트면 --%>
+<%-- <p>상품이 없습니다.</p> --%>
+<%-- products 속성이 빈리스트가 아니면 2개의 요소를 출력 --%>
+<%-- <ul><li>Apple</li><li>Banana</li><ul> --%>
 </body>
 </html>
