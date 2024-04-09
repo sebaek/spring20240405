@@ -3,6 +3,7 @@ package com.study.controller;
 import com.study.domain.MyBean101;
 import com.study.domain.MyBean102;
 import com.study.domain.MyBean103;
+import com.study.domain.MyBean104;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -159,6 +160,20 @@ public class Controller10 {
         model.addAttribute("myList", list);
     }
 
+    @RequestMapping("sub9")
+    public void method9(Model model) {
+        MyBean104 e1 = new MyBean104();
+        MyBean104 e2 = new MyBean104();
+
+        e1.setCity("부산");
+        e1.setFoods(List.of("국밥", "햄버거", "회"));
+
+        e2.setCity("파리");
+        e2.setFoods(List.of("커피", "바게뜨", "케이크"));
+
+        var obj = List.of(e1, e2);
+        model.addAttribute("data", obj);
+    }
 }
 
 
