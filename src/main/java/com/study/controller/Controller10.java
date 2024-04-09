@@ -19,6 +19,7 @@ public class Controller10 {
         var data = new HashMap<String, List>();
         data.put("key1", List.of("java", "css"));
         data.put("key2", List.of("react", "vue"));
+        data.put("key 삼", List.of("spring", "node"));
         model.addAttribute("myList", data);
         // view로 포워딩 (/WEB-INF/view/main10/sub1.jsp)
 
