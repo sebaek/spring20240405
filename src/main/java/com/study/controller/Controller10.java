@@ -39,4 +39,17 @@ public class Controller10 {
 
         model.addAttribute("myAttr", data);
     }
+
+    @RequestMapping("sub3")
+    public void method3(Model model) {
+        var data = new HashMap<String, String>();
+        data.put("흥민", "런던");
+        data.put("민재", "뮌헨");
+        data.put("강인", "파리");
+        data.put("jh", "샌프란시스코");
+
+        model.addAttribute("myAttr1", data);
+        model.addAttribute("myAttr2", "흥민");
+        model.addAttribute("myAttr3", "민재");
+    }
 }
