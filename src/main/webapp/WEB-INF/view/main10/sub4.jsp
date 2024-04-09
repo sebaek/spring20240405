@@ -14,7 +14,9 @@
 <p>${list1[three]["서울"]}</p>
 <p>${list1["3"]["서울"]}</p>
 
+<%--london--%>
 <p>${list1[0][data1]}</p>
-<p>${list1[1][data2]}</p>
+<%--paris--%>
+<p>${list1[0][data2]}</p>
 </body>
 </html>
