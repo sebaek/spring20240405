@@ -55,6 +55,30 @@
 <p>${"11" < 2}</p>
 <p>${11 < "2"}</p>
 <%--<p>${11 < "two"}</p>--%>
+
+<h3>논리연산 &&, ||</h3>
+<h4>&& and</h4>
+<p>${true && true}</p>
+<p>${true && false}</p>
+<p>${false && true}</p>
+<p>${false && false}</p>
+<h4>|| or</h4>
+<p>${true || true}</p>
+<p>${true || false}</p>
+<p>${false || true}</p>
+<p>${false || false}</p>
+<h4>&& and</h4>
+<p>${true and true}</p>
+<p>${true and false}</p>
+<p>${false and true}</p>
+<p>${false and false}</p>
+<h4>|| or</h4>
+<p>${true or true}</p>
+<p>${true or false}</p>
+<p>${false or true}</p>
+<p>${false or false}</p>
+
+
 </body>
 </html>
 
