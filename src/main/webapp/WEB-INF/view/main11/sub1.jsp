@@ -61,7 +61,7 @@
 <p>${11 < "2"}</p>
 <%--<p>${11 < "two"}</p>--%>
 
-<h3>논리연산 &&, ||</h3>
+<h3>논리연산 &&, ||, !</h3>
 <h4>&& and</h4>
 <p>${true && true}</p>
 <p>${true && false}</p>
@@ -82,6 +82,13 @@
 <p>${true or false}</p>
 <p>${false or true}</p>
 <p>${false or false}</p>
+
+<h4>!</h4>
+<p>${! true}</p>
+<p>${! false}</p>
+<h4>not</h4>
+<p>${not true}</p>
+<p>${not false}</p>
 
 <h3>삼항연산자</h3>
 <p>${true ? "hello" : "world"}</p>
