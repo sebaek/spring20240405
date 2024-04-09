@@ -51,5 +51,6 @@ public class Controller10 {
         model.addAttribute("myAttr1", data);
         model.addAttribute("myAttr2", "흥민");
         model.addAttribute("myAttr3", "민재");
+        model.addAttribute("jh", "강인");
     }
 }

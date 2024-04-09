@@ -14,8 +14,12 @@
 <%-- 런던 --%>
 <p>${myAttr1[myAttr2]}</p>
 <%-- 뮌헨 --%>
-<p></p>
+<p>${myAttr1["민재"]}</p>
 <%-- 뮌헨 --%>
-<p></p>
+<p>${myAttr1[myAttr3]}</p>
+
+<p>${myAttr1.jh}</p>
+<p>${myAttr1["jh"]}</p>
+<p>${myAttr1[jh]}</p>
 </body>
 </html>
