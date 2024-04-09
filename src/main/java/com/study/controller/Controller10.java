@@ -2,6 +2,7 @@ package com.study.controller;
 
 import com.study.domain.MyBean101;
 import com.study.domain.MyBean102;
+import com.study.domain.MyBean103;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -114,7 +115,7 @@ public class Controller10 {
         MyBean102 e1 = new MyBean102();
         MyBean102 e2 = new MyBean102();
         MyBean102 e3 = new MyBean102();
-        
+
         e1.setColor("white");
         e1.setModelName("tesla");
         e1.setPrice(30.50);
@@ -130,6 +131,32 @@ public class Controller10 {
         list.add(e3);
 
         model.addAttribute("cars", list);
+    }
+
+    @RequestMapping("sub8")
+    public void method8(Model model) {
+        var list = new ArrayList<MyBean103>();
+
+        MyBean103 e1 = new MyBean103();
+        MyBean103 e2 = new MyBean103();
+
+        // ${myList[0].name}
+        e1.setName("한국");
+        // ${myList[0].cities[0]}
+        // ${myList[0].cities[1]}
+        // ${myList[0].cities[2]}
+        e1.setCities(List.of("서울", "인천", "부산"));
+
+        // ${myList[1].name}
+        e2.setName("미국");
+        // ${myList[1].cities[0]}
+        // ${myList[1].cities[1]}
+        e2.setCities(List.of("뉴욕", "LA"));
+
+        list.add(e1);
+        list.add(e2);
+
+        model.addAttribute("myList", list);
     }
 
 }
