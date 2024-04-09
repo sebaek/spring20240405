@@ -13,8 +13,8 @@ public class Controller12 {
     @RequestMapping("sub1")
     public void method1(Model model) {
         model.addAttribute("age", 15);
-//        model.addAttribute("products", List.of());
-        model.addAttribute("products", List.of("Apple", "Banana"));
+        model.addAttribute("products", List.of());
+//        model.addAttribute("products", List.of("Apple", "Banana"));
         // /main12/sub1.jsp
     }
 }

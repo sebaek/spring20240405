@@ -16,7 +16,20 @@
 
 <%-- products 속성이 빈 리스트면 --%>
 <%-- <p>상품이 없습니다.</p> --%>
-<%-- products 속성이 빈리스트가 아니면 2개의 요소를 출력 --%>
+<%-- products 속성이 빈 리스트가 아니면 2개의 요소를 출력 --%>
 <%-- <ul><li>Apple</li><li>Banana</li><ul> --%>
+
+<c:if test="${empty products}">
+    <p>상품이 없습니다.</p>
+</c:if>
+
+<c:if test="${not empty products}">
+    <%--    ul>li*2--%>
+    <ul>
+        <li>${products[0]}</li>
+        <li>${products[1]}</li>
+    </ul>
+</c:if>
+
 </body>
 </html>
