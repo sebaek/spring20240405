@@ -9,7 +9,10 @@
 <p>${myAttr[0].kim}</p>
 
 <%-- seoul--%>
+<p>${myAttr[1].korea}</p>
 <%-- tokyo--%>
+<p>${myAttr[1].japan}</p>
 <%-- 워싱턴--%>
+<p>${myAttr[1]["미국"]}</p>
 </body>
 </html>
