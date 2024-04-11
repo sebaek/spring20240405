@@ -104,5 +104,8 @@ public class Controller14 {
     // todo : city, country, price 프로퍼티가 있는 클래스 만들고
     // 그 클래스를 사용해서
     // city, country, price 요청 파라미터를 바인딩 받는 메소드 작성
+    @RequestMapping("sub11")
+    public void sub11(MyBean146 o1) {
+    }
 
 }
