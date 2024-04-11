@@ -100,4 +100,9 @@ public class Controller14 {
         return "/main14/sub9";
     }
 
+    // /main14/sub11?city=서울&country=한국&price=3000
+    // todo : city, country, price 프로퍼티가 있는 클래스 만들고
+    // 그 클래스를 사용해서
+    // city, country, price 요청 파라미터를 바인딩 받는 메소드 작성
+
 }
