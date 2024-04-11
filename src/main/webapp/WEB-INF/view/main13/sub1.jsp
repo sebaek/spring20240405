@@ -7,11 +7,13 @@
 <body>
 <%-- set : attribute 추가--%>
 <c:set var="attr1" value="손흥민"></c:set>
-<%-- todo : attr2 속성 추가하기--%>
+<c:set var="attr2" value="이강인"></c:set>
+<c:set var="attr3" value="김하성" scope="page"></c:set>
 
 <p>${attr1}</p>
 
 <%--이강인--%>
 <p>${attr2}</p>
+<p>${attr3}</p>
 </body>
 </html>
