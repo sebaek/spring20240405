@@ -6,5 +6,7 @@
 </head>
 <body>
 <p>${player1.name}</p>
+<hr>
+<p>${myBean142.name}</p>
 </body>
 </html>

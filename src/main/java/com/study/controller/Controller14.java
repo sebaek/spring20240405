@@ -45,4 +45,19 @@ public class Controller14 {
         o1.setName("오타니");
     }
 
+    @RequestMapping("sub4")
+    public String sub4(@ModelAttribute MyBean142 o1) {
+        o1.setName("김민재");
+
+        return "/main14/sub3";
+    }
+
+    @RequestMapping("sub5")
+    public String sub5(MyBean142 o1) {
+
+        o1.setName("유재석");
+        
+        return "/main14/sub3";
+    }
+
 }
