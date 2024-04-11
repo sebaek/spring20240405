@@ -13,6 +13,13 @@
     <p>${elem}</p>
 </c:forEach>
 <hr>
+<c:forEach items="${foods}" var="food">
+    <p>${food}</p>
+</c:forEach>
+<hr>
+<c:forEach items="${foods}" var="food" begin="1" end="2">
+    <p>${food}</p>
+</c:forEach>
 
 
 </body>
