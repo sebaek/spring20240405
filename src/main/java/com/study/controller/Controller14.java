@@ -22,4 +22,17 @@ public class Controller14 {
         model.addAttribute("player2", o2);
     }
 
+    @RequestMapping("sub2")
+    public void sub2(Model model) {
+        MyBean142 o1 = new MyBean142();
+        o1.setName("김민재");
+
+        // attribute 명은
+        // 클래스명을 lowerCamalCase로 변경된 이름으로 결정
+        // myBean142
+        // 좋은 습관은 이름을 직접 작성하는 것
+        model.addAttribute(o1);
+
+    }
+
 }
