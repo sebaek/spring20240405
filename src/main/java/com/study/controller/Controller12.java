@@ -92,6 +92,6 @@ public class Controller12 {
         MyBean122 e5 = new MyBean122("김민재", "뮌헨", "한국", "축구", List.of("수비수"));
 
 
-        model.addAttribute("playerList", List.of());
+        model.addAttribute("playerList", List.of(e1, e2, e3, e4, e5));
     }
 }
