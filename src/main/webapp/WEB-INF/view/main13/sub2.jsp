@@ -22,5 +22,7 @@
 <%-- todo:  url 태그 사용해서  아래와 같은 주소 만들기--%>
 <%-- https://search.daum.net/search?w=tot&DA=YZR&t__nil_searchbox=btn&q=%EC%97%90%EC%8A%A4%ED%8C%8C --%>
 
+<a href="${daumUrl}">에스파 검색 결과</a>
+
 </body>
 </html>
