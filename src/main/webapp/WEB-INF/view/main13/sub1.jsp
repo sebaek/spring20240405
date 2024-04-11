@@ -18,7 +18,7 @@
 
 <hr>
 <c:set target="${obj1}" property="address" value="강남"></c:set>
-<%-- todo: obj1 attribute의 age property을 55로 바꾸기 --%>
+<c:set target="${obj1}" property="age" value="55"/>
 <p>${obj1.address}</p>
 <p>${obj1.city}</p>
 <p>${obj1.age}</p>
