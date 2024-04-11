@@ -27,5 +27,16 @@
 
 <%-- todo : forEach 작성해보기--%>
 <%-- 기술들: java , css , react --%>
+<p>
+    <c:forEach items="${myList}" varStatus="stat">
+        <c:if test="${stat.first}">
+            기술들:
+        </c:if>
+        ${stat.current}
+        <c:if test="${not stat.last}">
+            ,
+        </c:if>
+    </c:forEach>
+</p>
 </body>
 </html>
