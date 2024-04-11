@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean121;
+import com.study.domain.MyBean122;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -80,5 +81,17 @@ public class Controller12 {
         MyBean121 e4 = new MyBean121("x5", "bmw", "독일", 7000);
 
         model.addAttribute("cars", List.of(e1, e2, e3, e4));
+    }
+
+    @RequestMapping("sub7")
+    public void method7(Model model) {
+        MyBean122 e1 = new MyBean122("손흥민", "토트넘", "한국", "축구", List.of("공격수"));
+        MyBean122 e2 = new MyBean122("김하성", "샌디에이고", "한국", "야구", List.of("유격수", "2루수"));
+        MyBean122 e3 = new MyBean122("오타니", "LA", "일본", "야구", List.of("투수", "지명타자"));
+        MyBean122 e4 = new MyBean122("이강인", "파리", "한국", "축구", List.of("미드필더"));
+        MyBean122 e5 = new MyBean122("김민재", "뮌헨", "한국", "축구", List.of("수비수"));
+
+
+        model.addAttribute("playerList", List.of());
     }
 }
