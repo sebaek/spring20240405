@@ -52,5 +52,14 @@ public class Controller12 {
     public void method4(Model model) {
         model.addAttribute("myList", List.of("java", "css", "react"));
         model.addAttribute("foods", List.of("피자", "햄버거", "찌개", "돈까스"));
+
+        model.addAttribute("myMap", Map.of("son", "london",
+                "lee", "paris",
+                "kim", "munchen"));
+
+        model.addAttribute("cars", Map.of("tesla", "usa",
+                "kia", "korea",
+                "volvo", "sweden"));
+
     }
 }

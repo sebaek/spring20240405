@@ -21,6 +21,9 @@
     <p>${food}</p>
 </c:forEach>
 
-
+<hr>
+<c:forEach items="${myMap}" var="item">
+    <p>${item.key} : ${item.value}</p>
+</c:forEach>
 </body>
 </html>
