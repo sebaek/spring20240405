@@ -13,4 +13,9 @@ public class Controller13 {
         MyBean131 obj1 = new MyBean131("신촌", "서울", 44);
         model.addAttribute("obj1", obj1);
     }
+
+    @RequestMapping("sub2")
+    public void sub2(Model model) {
+
+    }
 }
