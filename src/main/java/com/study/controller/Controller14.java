@@ -56,7 +56,8 @@ public class Controller14 {
     public String sub5(MyBean142 o1) {
 
         o1.setName("유재석");
-        
+
+        // /WEB-INF/view/main14/sub3.jsp 로 포워드
         return "/main14/sub3";
     }
 
