@@ -15,5 +15,12 @@
 <%--이강인--%>
 <p>${attr2}</p>
 <p>${attr3}</p>
+
+<hr>
+<c:set target="${obj1}" property="address" value="강남"></c:set>
+<%-- todo: obj1 attribute의 age property을 55로 바꾸기 --%>
+<p>${obj1.address}</p>
+<p>${obj1.city}</p>
+<p>${obj1.age}</p>
 </body>
 </html>
