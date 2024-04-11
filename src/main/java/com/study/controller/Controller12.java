@@ -65,4 +65,9 @@ public class Controller12 {
         model.addAttribute("myMap2", Map.of("한국", "김치", "미국", "햄버거", "베트남", "쌀국수"));
 
     }
+
+    @RequestMapping("sub5")
+    public void method5(Model model) {
+        model.addAttribute("myList", List.of("java", "css", "react"));
+    }
 }
