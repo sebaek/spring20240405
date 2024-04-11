@@ -47,4 +47,10 @@ public class Controller12 {
     public void method3(Model model) {
         model.addAttribute("dan", 6);
     }
+
+    @RequestMapping("sub4")
+    public void method4(Model model) {
+        model.addAttribute("myList", List.of("java", "css", "react"));
+        model.addAttribute("foods", List.of("피자", "햄버거", "찌개", "돈까스"));
+    }
 }
