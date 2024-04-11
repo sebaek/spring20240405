@@ -1,5 +1,6 @@
 package com.study.controller;
 
+import com.study.domain.MyBean121;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -69,5 +70,15 @@ public class Controller12 {
     @RequestMapping("sub5")
     public void method5(Model model) {
         model.addAttribute("myList", List.of("java", "css", "react"));
+    }
+
+    @RequestMapping("sub6")
+    public void method6(Model model) {
+        MyBean121 e1 = new MyBean121("모하비", "kia", "한국", 3000);
+        MyBean121 e2 = new MyBean121("모델X", "tesla", "미국", 4000);
+        MyBean121 e3 = new MyBean121("XC90", "volvo", "스웨덴", 5000);
+        MyBean121 e4 = new MyBean121("x5", "bmw", "독일", 7000);
+
+        model.addAttribute("cars", List.of(e1, e2, e3, e4));
     }
 }
