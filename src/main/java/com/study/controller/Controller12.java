@@ -61,5 +61,8 @@ public class Controller12 {
                 "kia", "korea",
                 "volvo", "sweden"));
 
+        model.addAttribute("myList2", List.of("spring", "bootstrap", "prettier"));
+        model.addAttribute("myMap2", Map.of("한국", "김치", "미국", "햄버거", "베트남", "쌀국수"));
+
     }
 }
