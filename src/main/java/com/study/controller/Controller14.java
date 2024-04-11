@@ -28,7 +28,7 @@ public class Controller14 {
         o1.setName("김민재");
 
         // attribute 명은
-        // 클래스명을 lowerCamalCase로 변경된 이름으로 결정
+        // 클래스명을 lowerCamelCase 로 변경된 이름으로 결정
         // myBean142
         // 좋은 습관은 이름을 직접 작성하는 것
         model.addAttribute(o1);
