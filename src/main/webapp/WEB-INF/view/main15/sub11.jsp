@@ -5,10 +5,10 @@
     <title>Title</title>
 </head>
 <body>
+<c:import url="navbar6.jsp?cur=sub11"/>
 
-<c:import url="navbar6.jsp?cur=sub10"/>
 <div>
-    sub10 contents!!!!!!!!
+    sub11 컨텐츠!!!!
 </div>
 </body>
 </html>
