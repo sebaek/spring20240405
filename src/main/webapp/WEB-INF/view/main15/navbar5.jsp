@@ -5,8 +5,10 @@
 <div>
     <div>
         <%--        page value2--%>
+        ${attr1}, ${pageScope.attr1}, ${pageScope["attr1"]}
     </div>
     <div>
         <%--        request value1--%>
+        ${requestScope.attr1}, ${requestScope["attr1"]}
     </div>
 </div>
