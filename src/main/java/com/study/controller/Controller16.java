@@ -9,4 +9,9 @@ public class Controller16 {
     @RequestMapping("sub1")
     public void sub1() {
     }
+
+    @RequestMapping("sub2")
+    public String sub2() {
+        return "/main16/main/sub2";
+    }
 }
