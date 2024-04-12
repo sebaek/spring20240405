@@ -43,4 +43,18 @@ public class Controller17 {
     @RequestMapping("sub5")
     public void sub5(Model model) {
     }
+
+    // todo: sub6.jsp, sub7,jsp, sub8.jsp, navbar4.jsp
+    @RequestMapping("sub6")
+    public void sub6(Model model) {
+    }
+
+    @RequestMapping("sub7")
+    public void sub7(Model model) {
+    }
+
+    @RequestMapping("sub8")
+    public void sub8(Model model) {
+    }
+
 }
