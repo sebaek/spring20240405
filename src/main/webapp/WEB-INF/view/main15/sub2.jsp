@@ -12,5 +12,9 @@
     sub2 페이지의 콘텐츠
 </div>
 
+<div>
+    회사 정보
+</div>
+
 </body>
 </html>
