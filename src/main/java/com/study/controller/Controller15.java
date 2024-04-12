@@ -16,4 +16,13 @@ public class Controller15 {
     public void sub2() {
         // /WEB-INF/view/main15/sub2.jsp 로 포워드
     }
+
+    @RequestMapping("sub3")
+    public void sub3() {
+    }
+
+    @RequestMapping("sub4")
+    public void sub4() {
+    }
+
 }

@@ -5,14 +5,10 @@
     <title>Title</title>
 </head>
 <body>
-
-<c:import url="navbar.jsp"/>
-
+<c:set var="current2" value="sub4" scope="request"/>
+<c:import url="navbar2.jsp"/>
 <div>
-    sub2 페이지의 콘텐츠
+    sub4의 내용...
 </div>
-
-<c:import url="footer.jsp"/>
-
 </body>
 </html>

@@ -12,9 +12,7 @@
     sub1 페이지의 내용
 </div>
 <%--  todo : 아래 내용을 footer.jsp 로--%>
-<div>
-    회사 정보
-</div>
+<c:import url="footer.jsp"/>
 
 
 </body>
