@@ -14,5 +14,10 @@
 <div>address : ${param.address}</div>
 <div>model : ${param.model}</div>
 
+<hr>
+<%-- 요청 주소에 적절한 query string 작성--%>
+<div>${param.title}</div>
+<div>${param.content}</div>
+<div>${param.car}</div>
 </body>
 </html>
