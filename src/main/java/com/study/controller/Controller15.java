@@ -33,4 +33,8 @@ public class Controller15 {
     public void sub6() {
     }
 
+    @RequestMapping("sub7")
+    public void sub7() {
+    }
+
 }
