@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-
+<c:set var="cur" value="sub6" scope="request"/>
 <c:import url="navbar3.jsp"/>
 <div>
     sub6 콘텐츠@@@@@
