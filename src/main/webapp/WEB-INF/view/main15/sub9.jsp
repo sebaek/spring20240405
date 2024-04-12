@@ -24,5 +24,8 @@
 <hr>
 <%-- ?q=bts&song=dynamite&company=하이브 --%>
 <%-- todo : bts, dynamite, 하이브 출력 코드 작성--%>
+<div>${param.q}</div>
+<div>${param.song}</div>
+<div>${param.company}</div>
 </body>
 </html>
