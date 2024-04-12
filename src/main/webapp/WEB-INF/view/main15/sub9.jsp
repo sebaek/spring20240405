@@ -16,8 +16,13 @@
 
 <hr>
 <%-- 요청 주소에 적절한 query string 작성--%>
+<%-- ?title=java&content=stream&car=tesla --%>
 <div>${param.title}</div>
 <div>${param.content}</div>
 <div>${param.car}</div>
+
+<hr>
+<%-- ?q=bts&song=dynamite&company=하이브 --%>
+<%-- todo : bts, dynamite, 하이브 출력 코드 작성--%>
 </body>
 </html>
