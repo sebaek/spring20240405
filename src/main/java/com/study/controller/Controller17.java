@@ -44,6 +44,12 @@ public class Controller17 {
     public void sub5(Model model) {
     }
 
+    @RequestMapping("sub9")
+    public void sub9(HttpSession session) {
+        // session 만료
+        session.invalidate();
+    }
+
     // todo: sub6.jsp, sub7,jsp, sub8.jsp, navbar4.jsp
     @RequestMapping("sub6")
     public void sub6(Model model) {

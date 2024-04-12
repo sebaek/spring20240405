@@ -17,11 +17,12 @@
     </div>
     <div>
         <c:if test="${not empty sessionScope.userName}" var="loggedIn">
-            ${sessionScope.userName}
+            ${sessionScope.userName} 님
+
+            <a href="/main17/sub9">logout</a>
         </c:if>
         <c:if test="${not loggedIn}">
-            guest
+            guest 님
         </c:if>
-        님
     </div>
 </div>
