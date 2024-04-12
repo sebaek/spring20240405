@@ -20,6 +20,21 @@
 <div>
     sub7의 attr3 : ${attr3} <%-- 좁은영역부터 attribute 찾음 --%>
 </div>
+
+<%-- el 내장 객체 param, pageScope, requestScope --%>
+<div>
+    sub7의 page 영역 attr3 : ${pageScope.attr3}
+</div>
+<div>
+    sub7의 page 영역 attr3 : ${pageScope["attr3"]}
+</div>
+<div>
+    sub7의 request 영역 attr3 : ${requestScope.attr3}
+</div>
+<div>
+    sub7의 request 영역 attr3 : ${requestScope["attr3"]}
+</div>
+
 <div>
 
     sub7 contents!!!!!
