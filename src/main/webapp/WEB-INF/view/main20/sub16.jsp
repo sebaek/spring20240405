@@ -26,5 +26,15 @@
     </div>
 
 </form>
+
+<hr>
+<%-- todo : form 요소 만들기
+      요청 경로 : /main20/sub18
+      요청 방식 : post
+      request parameter : name, city, address
+
+      /main20/sub18 요청 경로에서 일하는 메소드 작성
+      위에서 전송한 name, city, address 받아서 출력
+      --%>
 </body>
 </html>
