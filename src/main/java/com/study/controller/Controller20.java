@@ -123,4 +123,15 @@ public class Controller20 {
         System.out.println("book = " + Arrays.toString(book));
     }
 
+    @RequestMapping("sub16")
+    public void sub16() {
+    }
+
+    @RequestMapping("sub17")
+    public void sub17(String id, String password, String describe) {
+        System.out.println("id = " + id);
+        System.out.println("password = " + password);
+        System.out.println("describe = " + describe);
+    }
+
 }
