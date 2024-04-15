@@ -48,6 +48,12 @@ public class Controller19 {
     @RequestMapping("sub7")
     public void sub7(HttpServletResponse response) {
         // todo : /main19/sub7로 요청 오면 새 쿠키를 추가해서 응답하도록
+        Cookie cookie = new Cookie("cookie-name2", "cookie-value2");
+        // javascript에서 볼 수 없도록 함
+        cookie.setHttpOnly(true);
+        // 정의된 경로와 그 하위 경로에서 쿠키를 가지고 오도록 함
+        cookie.setPath("/");
 
+        response.addCookie(cookie);
     }
 }
