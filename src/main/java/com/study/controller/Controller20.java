@@ -6,8 +6,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 @Controller
 @RequestMapping("main20")
@@ -98,6 +100,12 @@ public class Controller20 {
     @RequestMapping("sub13")
     public void sub13(String city) {
         System.out.println("city = " + city);
+    }
+
+    @RequestMapping("sub14")
+    public void sub14(@RequestParam("foods") String[] foods) {
+        // @RequestParam("foods") 생략 가능
+        System.out.println(Arrays.toString(foods));
     }
 
 }
