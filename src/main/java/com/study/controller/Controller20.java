@@ -108,4 +108,19 @@ public class Controller20 {
         System.out.println(Arrays.toString(foods));
     }
 
+    // todo : sub11.jsp 에 form 요소 작성
+    //  submit 클릭시 /main20/sub15 로 전송
+    //  type, phone, book 요청 파라미터 전송
+    //  type : select & option 요소로
+    //  phone : radio button 으로
+    //  book  : checkbox 
+    @RequestMapping("sub15")
+    public void sub15(String type,
+                      String phone,
+                      String[] book) {
+        System.out.println("type = " + type);
+        System.out.println("phone = " + phone);
+        System.out.println("book = " + Arrays.toString(book));
+    }
+
 }
