@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -20,5 +21,15 @@ public class Controller20 {
 
     @RequestMapping("sub4")
     public void sub4() {
+    }
+
+    @RequestMapping("sub5")
+    public void sub5(String player, Model model) {
+        // 1. 요청 분석/가공
+        // 2. 비즈니스 로직 처리
+        // 3. 결과를 모델에 담고
+        model.addAttribute("result", player + "검색 결과");
+        // 4. 뷰로 forward(뷰 이름 리턴)
+
     }
 }
