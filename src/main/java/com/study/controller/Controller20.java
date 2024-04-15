@@ -82,5 +82,17 @@ public class Controller20 {
 
     }
 
+    @RequestMapping("sub11")
+    public void sub11() {
+    }
+
+    @RequestMapping("sub12")
+    public void sub12(String type,
+                      String content,
+                      String city) {
+        System.out.println("type = " + type);
+        System.out.println("content = " + content);
+        System.out.println("city = " + city);
+    }
 
 }
