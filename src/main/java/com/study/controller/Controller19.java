@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
@@ -56,4 +57,49 @@ public class Controller19 {
 
         response.addCookie(cookie);
     }
+
+    // todo : /main19/sub8로 요청 오면 새 쿠키를 추가해서 응답하도록
+    // 그 쿠키는 javascript에서 접근하지 못하게
+    // 경로는 "/"로
+    @RequestMapping("sub8")
+    public void sub8(HttpServletResponse response) {
+        Cookie cookie = new Cookie("cookie-name3", "cookie-value3");
+        cookie.setHttpOnly(true);
+        cookie.setPath("/");
+        // cookie 지속 시간 결정 (초 단위)
+        cookie.setMaxAge(3);
+        response.addCookie(cookie);
+    }
+
+    @RequestMapping("sub9")
+    public void sub9(HttpServletResponse response) {
+        Cookie cookie = new Cookie("cookie-name4", "cookie-value4");
+        cookie.setHttpOnly(true);
+        cookie.setPath("/");
+        cookie.setMaxAge(60);
+        response.addCookie(cookie);
+    }
+
+    @RequestMapping("sub10")
+    public void sub10(HttpServletRequest request, HttpServletResponse response) {
+        // cookie-name4 지우기
+        // 1.요청에서 쿠키 얻기
+        Cookie[] cookies = request.getCookies();
+        Cookie cookie = null;
+        if (cookies != null) {
+            for (Cookie c : cookies) {
+                if (c.getName().equals("cookie-name4")) {
+                    cookie = c;
+                }
+            }
+        }
+        if (cookie != null) {
+            // 2.쿠키의 지속시간 0으로 세팅
+            cookie.setPath("/");
+            cookie.setMaxAge(0);
+            // 3.쿠키를 응답에 추가
+            response.addCookie(cookie);
+        }
+    }
+
 }
