@@ -62,5 +62,50 @@
     </div>
 </form>
 
+<hr>
+<form action="/main20/sub15">
+    <%--    div>select[name=type]>option*3--%>
+    <div>
+        <select name="type" id="">
+            <option value="football">축구</option>
+            <option value="baseball">야구</option>
+            <option value="basketball">농</option>
+        </select>
+    </div>
+
+    <%--    div*3>input:r[name=phone]--%>
+    <div>
+        <input type="radio" name="phone" id="" value="iphone">
+        아이폰
+    </div>
+    <div>
+        <input type="radio" name="phone" id="" value="galaxy">
+        갤럭시
+    </div>
+    <div>
+        <input type="radio" name="phone" id="" value="nokia">
+        노키아
+    </div>
+
+    <%--    div*3>input:c[name=book]--%>
+    <div>
+        <input type="checkbox" name="book" id="" value="java">
+        자바
+    </div>
+    <div>
+        <input type="checkbox" name="book" id="" value="spring">
+        스프링
+    </div>
+    <div>
+        <input type="checkbox" name="book" id="" value="react">
+        리액트
+    </div>
+
+    <div>
+        <input type="submit">
+    </div>
+
+</form>
+
 </body>
 </html>

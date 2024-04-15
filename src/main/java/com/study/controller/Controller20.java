@@ -113,7 +113,7 @@ public class Controller20 {
     //  type, phone, book 요청 파라미터 전송
     //  type : select & option 요소로
     //  phone : radio button 으로
-    //  book  : checkbox 
+    //  book  : checkbox
     @RequestMapping("sub15")
     public void sub15(String type,
                       String phone,
