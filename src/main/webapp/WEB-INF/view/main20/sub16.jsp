@@ -36,5 +36,19 @@
       /main20/sub18 요청 경로에서 일하는 메소드 작성
       위에서 전송한 name, city, address 받아서 출력
       --%>
+<form action="/main20/sub18" method="post">
+    <div>이름 :
+        <input type="text" name="name">
+    </div>
+    <div>도시 :
+        <input type="text" name="city">
+    </div>
+    <div>주소 :
+        <input type="text" name="address">
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
 </body>
 </html>

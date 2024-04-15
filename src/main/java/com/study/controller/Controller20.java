@@ -134,4 +134,11 @@ public class Controller20 {
         System.out.println("describe = " + describe);
     }
 
+    @RequestMapping("sub18")
+    public void sub18(String city, String address, String name) {
+        System.out.println("city = " + city);
+        System.out.println("address = " + address);
+        System.out.println("name = " + name);
+    }
+
 }
