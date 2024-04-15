@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean201;
+import com.study.domain.MyBean202;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -75,6 +76,11 @@ public class Controller20 {
     // /main20/sub10 요청 경로에서 일하는 메소드 작성
     // city, address, title, content 의 요청 파라미터가
     // MyBean202 객체의 property로 바인딩 되도록 코드 작성
+    @RequestMapping("sub10")
+    public void sub10(MyBean202 obj) {
+        System.out.println("obj = " + obj);
+
+    }
 
 
 }
