@@ -14,5 +14,15 @@
     <input type="text" name="player" placeholder="이름을 입력해 주세요.">
     <input type="submit">
 </form>
+<hr>
+<%-- todo: /main20/sub6 요청 경로에서 일하는 메소드 작성 , sub6.jsp 작성--%>
+<form action="/main20/sub6">
+    주소 :
+    <input type="text" name="address">
+    <br>
+    종류 :
+    <input type="text" name="type">
+    <input type="submit">
+</form>
 </body>
 </html>

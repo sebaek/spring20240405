@@ -32,4 +32,9 @@ public class Controller20 {
         // 4. 뷰로 forward(뷰 이름 리턴)
 
     }
+
+    @RequestMapping("sub6")
+    public void sub6(String address, String type, Model model) {
+        model.addAttribute("result", address + "의 " + type + " 검색 결과");
+    }
 }
