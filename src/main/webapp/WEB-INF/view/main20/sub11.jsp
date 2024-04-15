@@ -19,5 +19,28 @@
     <br>
     <input type="submit">
 </form>
+
+<hr>
+
+<form action="/main20/sub13">
+    <%--    div>div*3>input:r[name=city]--%>
+    <div>
+        <div>
+            <input type="radio" name="city" value="seoul" id="">
+            서울
+        </div>
+        <div>
+            <input type="radio" name="city" value="london" id="">
+            런던
+        </div>
+        <div>
+            <input type="radio" name="city" value="incheon" id="">
+            인천
+        </div>
+        <div>
+            <input type="submit">
+        </div>
+    </div>
+</form>
 </body>
 </html>

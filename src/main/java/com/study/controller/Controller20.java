@@ -95,4 +95,9 @@ public class Controller20 {
         System.out.println("city = " + city);
     }
 
+    @RequestMapping("sub13")
+    public void sub13(String city) {
+        System.out.println("city = " + city);
+    }
+
 }
