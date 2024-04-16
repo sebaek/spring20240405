@@ -48,7 +48,25 @@ public class Controller22 {
 
     @GetMapping("sub5")
     public void method5() {
-        
+
     }
+
+    @GetMapping("sub6")
+    public void method6() {
+        // login form 있는 view로 포워드
+        // todo: jsp 작성
+    }
+
+    @PostMapping("sub7")
+    public String method7(String id, String password) {
+        // todo : 아래 코드를 작성하기
+        //  id와 password가 일치하면 로그인 성공, 아니면 실패
+        //  실패면 login form으로 이동하라는 redirect 응답
+        //  성공이면 로그인 성공했다는 경로로 redirect 응답
+        return null;
+    }
+
+    // todo : 성공 경로 /main22/sub8 에서 일하는 메소드와 jsp 만들기
+
 
 }
