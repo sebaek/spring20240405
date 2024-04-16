@@ -43,4 +43,15 @@ public class Controller24 {
         model.addAttribute("employees", list);
     }
 
+    @GetMapping("sub2")
+    public void method2(Model model) throws Exception {
+        String sql = """
+                SELECT CustomerName, City, Country
+                FROM Customers
+                """;
+        // todo : 조회된 결과를 view에서 보여주기
+        //  MyBean242(customerName, city, country) 클래스 만들기
+        
+    }
+
 }
