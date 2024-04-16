@@ -46,6 +46,9 @@ FROM Employees; -- ok
 SELECT FirstName
 FROM Employees;
 
+SELECT CustomerName
+FROM Customers;
+
 
 
 
