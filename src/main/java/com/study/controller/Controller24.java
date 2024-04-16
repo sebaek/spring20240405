@@ -76,4 +76,7 @@ public class Controller24 {
         }
     }
 
+    // todo: 세번째 메소드를 만들어서
+    //  고객이 있는 나라들을 중복없이 조회 후 jsp에서 출력
+
 }
