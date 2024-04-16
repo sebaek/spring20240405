@@ -45,4 +45,14 @@ public class Controller21 {
         System.out.println("Controller21.method6");
     }
 
+    @GetMapping("sub5")
+    public void method7() {
+        System.out.println("Controller21.method7");
+    }
+
+    @PostMapping("sub5")
+    public void method8() {
+        System.out.println("Controller21.method8");
+    }
+
 }

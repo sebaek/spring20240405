@@ -32,5 +32,17 @@
     <input type="submit" value="post sub4">
 </form>
 
+<hr>
+
+<%-- todo : 아래 두 form 전송 버튼 클릭시 실행되는 메소드 작성
+      @GetMapping, @PostMapping 활용--%>
+<%--form*2>input:s--%>
+<form action="/main21/sub5">
+    <input type="submit" value="get 방식으로 sub5">
+</form>
+<form action="/main21/sub5" method="post">
+    <input type="submit" value="post 방식으로 sub5">
+</form>
+
 </body>
 </html>
