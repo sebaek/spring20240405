@@ -28,7 +28,20 @@ DESCRIBE Customers;
 DESC Customers;
 
 # todo : Employees 테이블의 컬럼이 어떤 것들이 있는 지 조회
+DESC Employees;
 # todo : Employees 테이블 조회 (first name, last name)
+SELECT LastName, FirstName
+FROM Employees;
+
+# SELECT 에 나열한 컬럼명의 순서대로 결과가 나옴
+SELECT FirstName, LastName
+FROM Employees;
+
+# SQL 작성시 관습 : 키워드는 대문자, 나머지는 소문자
+select *
+from Employees; -- xxx
+SELECT *
+FROM Employees; -- ok
 
 
 
