@@ -122,4 +122,30 @@ public class Controller22 {
     public void method12(@ModelAttribute("attr1") List<String> attr1) {
         System.out.println("attr1 = " + attr1);
     }
+
+    @GetMapping("sub13")
+    public void method13() {
+    }
+
+    @PostMapping("sub14")
+    public String method14(String id, String pw, RedirectAttributes rttr) {
+        boolean ok = id.equals(pw);
+        if (ok) {
+            // 로그인 성공시
+            // 메인 페이지로 redirect
+            rttr.addFlashAttribute("message", "로그인 성공하였습니다.");
+            return "redirect:/main22/sub15";
+        } else {
+            // 로그인 실패시
+            // 로그인 페이지로 redirect
+            rttr.addFlashAttribute("message", "아이디와 패스워드를 확인해주세요");
+            return "redirect:/main22/sub13";
+
+        }
+    }
+
+    @GetMapping("sub15")
+    public void method15() {
+    }
+
 }
