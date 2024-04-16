@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequestMapping("main22")
@@ -69,4 +70,26 @@ public class Controller22 {
     // todo : 성공 경로 /main22/sub8 에서 일하는 메소드와 jsp 만들기
 
 
+    @GetMapping("sub9")
+    public String method9(RedirectAttributes rttr) {
+        String condition = "";
+        if (Math.random() < 0.5) {
+            condition = "ok";
+        } else {
+            condition = "fail";
+        }
+        // redirection 시 정보전달은 RedirectAttributes 활용
+        rttr.addAttribute("condition", condition);
+        rttr.addAttribute("type", "soccer");
+        rttr.addAttribute("address", "신촌");
+        rttr.addAttribute("city", "서울");
+
+        // query string
+        return "redirect:/main22/sub10";
+    }
+
+    @GetMapping("sub10")
+    public void method10(String condition) {
+        System.out.println("condition = " + condition);
+    }
 }
