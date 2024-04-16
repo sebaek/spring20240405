@@ -2,6 +2,7 @@ package com.study.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.sql.Connection;
@@ -44,5 +45,27 @@ public class Controller23 {
         // 모델에 결과 넣고
         model.addAttribute("nameList", list);
         // view로 포워드
+    }
+
+    @GetMapping("sub2")
+    public void method2(Model model) throws Exception {
+        var list = new ArrayList<String>();
+
+        String sql = "SELECT CustomerName FROM Customers";
+
+        String url = "jdbc:mariadb://localhost:3306/w3schools";
+        String user = "root";
+        String password = "1234";
+        Connection con = DriverManager.getConnection(url, user, password);
+        Statement statement = con.createStatement();
+        ResultSet rs = statement.executeQuery(sql);
+
+        try (con; statement; rs) {
+            while (rs.next()) {
+                list.add(rs.getString(1));
+            }
+        }
+
+        model.addAttribute("names", list);
     }
 }
