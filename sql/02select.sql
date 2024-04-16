@@ -43,7 +43,8 @@ from Employees; -- xxx
 SELECT *
 FROM Employees; -- ok
 
-
+SELECT FirstName
+FROM Employees;
 
 
 
