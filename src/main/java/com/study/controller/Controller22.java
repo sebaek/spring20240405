@@ -148,4 +148,6 @@ public class Controller22 {
     public void method15() {
     }
 
+    // todo:(13, 14, 15)와 같은 일을 하는 (16, 17, 18) 작성
+
 }
