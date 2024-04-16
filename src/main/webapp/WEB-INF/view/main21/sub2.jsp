@@ -22,6 +22,15 @@
     <input type="submit" value="sub3 post">
 </form>
 
+<hr>
+
+<%--form*2>input:s--%>
+<form action="/main21/sub4">
+    <input type="submit" value="get sub4">
+</form>
+<form action="/main21/sub4" method="post">
+    <input type="submit" value="post sub4">
+</form>
 
 </body>
 </html>
