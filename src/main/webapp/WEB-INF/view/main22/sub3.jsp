@@ -5,6 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+<c:if test="${param.type eq 'fail'}">
+    <div style="padding: 20px; background-color: pink">
+        아이디와 패스워드를 확인하세요.
+    </div>
+</c:if>
 <%--form>div*2>input^div>input:s--%>
 <form action="/main22/sub4" method="post">
     <div>

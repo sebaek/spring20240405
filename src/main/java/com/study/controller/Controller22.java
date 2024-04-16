@@ -32,16 +32,21 @@ public class Controller22 {
     }
 
     @PostMapping("sub4")
-    public String method4(String id, String password) {
+    public String method4(String id, String password,
+                          RedirectAttributes redirectAttributes) {
         boolean ok = id.equals(password);
 
         if (ok) {
             // 로그인 성공 시
             // 성공 후 보여주는 페이지로 이동
+            redirectAttributes.addAttribute("type", "login");
+
             return "redirect:/main22/sub5";
         } else {
             // 로그인 실패 시
             // 로그인 form 있는 페이지로 이동
+            redirectAttributes.addAttribute("type", "fail");
+            
             return "redirect:/main22/sub3";
         }
 
