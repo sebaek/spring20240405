@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -21,12 +22,12 @@ public class Controller25 {
     private DataSource dataSource;
 
     @GetMapping("sub1")
-    public void method1(Model model) throws SQLException {
+    public void method1(@RequestParam("name") String searchName, Model model) throws SQLException {
         var list = new ArrayList<MyBean251>();
-        String sql = """
+        String sql = STR."""
                 SELECT *
                 FROM Employees
-                WHERE LastName = 'Fuller'
+                WHERE LastName = '\{searchName}'
                 """;
         Connection conn = dataSource.getConnection();
         Statement stmt = conn.createStatement();
