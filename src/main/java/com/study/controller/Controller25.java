@@ -22,7 +22,8 @@ public class Controller25 {
     private DataSource dataSource;
 
     @GetMapping("sub1")
-    public void method1(@RequestParam("name") String searchName, Model model) throws SQLException {
+    public void method1(@RequestParam(value = "name", required = false) String searchName,
+                        Model model) throws SQLException {
         var list = new ArrayList<MyBean251>();
         String sql = STR."""
                 SELECT *

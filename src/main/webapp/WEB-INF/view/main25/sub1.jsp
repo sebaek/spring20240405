@@ -6,6 +6,13 @@
 </head>
 <body>
 <h3>직원 조회</h3>
+<div>
+    <form action="/main25/sub1">
+        이름 :
+        <input type="text" name="name" placeholder="조회할 이름을 입력하세요">
+        <input type="submit" value="조회">
+    </form>
+</div>
 <hr>
 <c:forEach items="${employees}" var="employee">
     <div>
