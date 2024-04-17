@@ -25,7 +25,7 @@ public class Controller25 {
         var list = new ArrayList<MyBean251>();
         String sql = """
                 SELECT *
-                FROM Employess
+                FROM Employees
                 WHERE LastName = 'Fuller'
                 """;
         Connection conn = dataSource.getConnection();
