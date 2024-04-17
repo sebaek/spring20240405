@@ -153,7 +153,8 @@ public class Controller25 {
             }
         }
         model.addAttribute("customerList", list);
-
+        model.addAttribute("prevSearch", search);
+        
         return "main25/sub4CustomerList";
     }
 }

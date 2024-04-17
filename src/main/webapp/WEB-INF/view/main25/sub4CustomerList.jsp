@@ -18,7 +18,7 @@
 <h3>고객 목록</h3>
 <form action="/main25/sub4">
     이름
-    <input type="text" placeholder="조회할 고객 이름을 입력하세요." name="search">
+    <input value="${prevSearch}" type="text" placeholder="조회할 고객 이름을 입력하세요." name="search">
     <input type="submit" value="조회">
 </form>
 <hr>
