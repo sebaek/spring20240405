@@ -34,7 +34,23 @@ FROM Products
 WHERE ProductName LIKE '%od%';
 
 -- todo : anton 이 포함된 상품명을 가진 상품들 조회
+SELECT *
+FROM Products
+WHERE ProductName LIKE '%anton%';
 -- todo : b로 시작하는 고객명을 가진 고객들 조회
+SELECT *
+FROM Customers
+WHERE CustomerName LIKE 'b%';
+
 -- todo : a로 끝나는 나라에 있는 고객들 조회
+SELECT *
+FROM Customers
+WHERE Country LIKE '%a';
 -- todo : 1일에 주문된 주문(Orders) 조회
+SELECT *
+FROM Orders
+WHERE OrderDate LIKE '%01';
+SELECT *
+FROM Orders
+WHERE OrderDate LIKE '____-__-01';
 

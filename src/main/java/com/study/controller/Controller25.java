@@ -154,7 +154,51 @@ public class Controller25 {
         }
         model.addAttribute("customerList", list);
         model.addAttribute("prevSearch", search);
+
+        return "main25/sub4CustomerList";
+    }
+
+    @GetMapping("sub5")
+    public String method5(String search, Model model) throws SQLException {
+        var list = new ArrayList<MyBean254Customer>();
+        String sql = """
+                SELECT * FROM Customers
+                WHERE CustomerName LIKE ?
+                """;
+        String keyword = "%" + search + "%";
+
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, keyword);
+        ResultSet rs = pstmt.executeQuery();
+
+        try (rs; conn; pstmt) {
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String contactName = rs.getString(3);
+                String address = rs.getString(4);
+                String city = rs.getString(5);
+                String postalCode = rs.getString(6);
+                String country = rs.getString(7);
+
+                MyBean254Customer obj = new MyBean254Customer();
+                obj.setId(id);
+                obj.setName(name);
+                obj.setContactName(contactName);
+                obj.setAddress(address);
+                obj.setCity(city);
+                obj.setPostalCode(postalCode);
+                obj.setCountry(country);
+
+                list.add(obj);
+            }
+        }
         
+        model.addAttribute("customerList", list);
+        model.addAttribute("prevSearch", search);
+
         return "main25/sub4CustomerList";
     }
 }
