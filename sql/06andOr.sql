@@ -56,3 +56,8 @@ WHERE OrderDate >= '1997-05-01'
   AND OrderDate < '1997-06-01';
 
 
+# 키워드가 customerName, contactName에 있는 고객들 조회
+SELECT *
+FROM Customers
+WHERE CustomerName LIKE '%be%'
+   OR ContactName LIKE '%be%';

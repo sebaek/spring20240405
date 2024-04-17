@@ -235,4 +235,40 @@ public class Controller25 {
 
         return "main25/sub6ProductList";
     }
+
+    // 조회 문자열이 contactName 또는 customerName에 포함된 고객들 조회
+    @GetMapping("sub7")
+    public String method7(String search, Model model) throws SQLException {
+        var list = new ArrayList<MyBean254Customer>();
+        String sql = """
+                SELECT *
+                FROM Customers
+                WHERE CustomerName LIKE ?
+                   OR ContactName LIKE ?
+                """;
+        String keyword = "%" + search + "%";
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, keyword);
+        pstmt.setString(2, keyword);
+
+        ResultSet rs = pstmt.executeQuery();
+
+        try (rs; conn; pstmt) {
+            while (rs.next()) {
+                MyBean254Customer obj = new MyBean254Customer();
+                obj.setId(rs.getInt(1));
+                obj.setName(rs.getString(2));
+                obj.setContactName(rs.getString(3));
+                obj.setAddress(rs.getString(4));
+                obj.setCity(rs.getString(5));
+                obj.setPostalCode(rs.getString(6));
+                obj.setCountry(rs.getString(7));
+                list.add(obj);
+            }
+        }
+        model.addAttribute("prevSearch", search);
+        model.addAttribute("customerList", list);
+        return "main25/sub4CustomerList";
+    }
 }
