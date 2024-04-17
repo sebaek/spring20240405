@@ -2,6 +2,7 @@ package com.study.controller;
 
 import com.study.domain.MyBean251;
 import com.study.domain.MyBean252;
+import com.study.domain.MyBean254Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -117,5 +118,42 @@ public class Controller25 {
     // todo : 고객 이름을 입력 받아서 고객 정보 조회
     //   sub4메소드와 sub4.jsp 작성
     //  예)SELECT * FROM Customers WHERE CustomerName = ?
-    
+    @GetMapping("sub4")
+    public String method4(String search, Model model) throws SQLException {
+        String sql = "SELECT * FROM Customers WHERE CustomerName = ?";
+        var list = new ArrayList<MyBean254Customer>();
+
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, search);
+
+        ResultSet rs = pstmt.executeQuery();
+
+        try (rs; conn; pstmt) {
+
+            while (rs.next()) {
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String contactName = rs.getString(3);
+                String address = rs.getString(4);
+                String city = rs.getString(5);
+                String postalCode = rs.getString(6);
+                String country = rs.getString(7);
+
+                MyBean254Customer obj = new MyBean254Customer();
+                obj.setId(id);
+                obj.setName(name);
+                obj.setContactName(contactName);
+                obj.setAddress(address);
+                obj.setCity(city);
+                obj.setPostalCode(postalCode);
+                obj.setCountry(country);
+
+                list.add(obj);
+            }
+        }
+        model.addAttribute("customerList", list);
+
+        return "main25/sub4CustomerList";
+    }
 }
