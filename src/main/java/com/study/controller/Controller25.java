@@ -25,11 +25,19 @@ public class Controller25 {
     public void method1(@RequestParam(value = "name", required = false) String searchName,
                         Model model) throws SQLException {
         var list = new ArrayList<MyBean251>();
+        // jdk 21
         String sql = STR."""
                 SELECT *
                 FROM Employees
                 WHERE LastName = '\{searchName}'
                 """;
+
+        // jdk 21 이전
+        String sql1 = """
+                SELECT *
+                FROM Employees
+                WHERE LastName = '""" + searchName + "'";
+        
         Connection conn = dataSource.getConnection();
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
