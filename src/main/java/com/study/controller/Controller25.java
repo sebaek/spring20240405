@@ -113,4 +113,9 @@ public class Controller25 {
         }
         model.addAttribute("products", list);
     }
+
+    // todo : 고객 이름을 입력 받아서 고객 정보 조회
+    //   sub4메소드와 sub4.jsp 작성
+    //  예)SELECT * FROM Customers WHERE CustomerName = ?
+    
 }
