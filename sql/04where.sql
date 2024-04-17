@@ -92,3 +92,6 @@ WHERE OrderDate < '1997-01-01';
 SELECT *
 FROM Orders
 WHERE OrderDate <= '1996-12-31';
+
+SELECT *
+FROM Products;

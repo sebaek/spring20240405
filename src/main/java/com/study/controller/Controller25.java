@@ -10,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 @Controller
@@ -74,10 +71,10 @@ public class Controller25 {
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         while (rs.next()) {
-            String id = rs.getString(1);
+            int id = rs.getInt(1);
             String name = rs.getString(2);
             String unit = rs.getString(5);
-            String price = rs.getString(6);
+            double price = rs.getDouble(6);
 
             MyBean252 product = new MyBean252(id, name, unit, price);
             list.add(product);
@@ -85,5 +82,35 @@ public class Controller25 {
 
         model.addAttribute("products", list);
 
+    }
+
+    @GetMapping("sub3")
+    public void method3(String search, Model model) throws SQLException {
+        String oldsql = STR."""
+                SELECT * FROM Products
+                WHERE ProductName = '\{search}'
+                """;
+        String sql = """
+                SELECT * FROM Products
+                WHERE ProductName = ?
+                """;
+
+        var list = new ArrayList<MyBean252>();
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        // 첫번째 파라미터:물음표 위치
+        // 두번째 파라미터:넣을 값
+        pstmt.setString(1, search);
+
+        ResultSet rs = pstmt.executeQuery();
+        while (rs.next()) {
+            MyBean252 row = new MyBean252(rs.getInt(1),
+                    rs.getString(2),
+                    rs.getString(5),
+                    rs.getDouble(6));
+
+            list.add(row);
+        }
+        model.addAttribute("products", list);
     }
 }
