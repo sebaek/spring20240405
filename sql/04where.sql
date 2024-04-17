@@ -65,3 +65,10 @@ WHERE BirthDate = '1968-12-08';
 SELECT *
 FROM Employees
 WHERE BirthDate >= '1955-01-01';
+
+
+# todo : 미국에 있는 공급자(Suppliers) 조회
+# todo : Last name이 Fuller인 직원(Employees) 조회
+# todo : CategoryID가 3번인 상품(Products) 조회
+# todo : 가격이 20.00 이상인 상품(Products) 조회
+# todo : 주문일이 1997년 이전인 주문(Orders) 조회
