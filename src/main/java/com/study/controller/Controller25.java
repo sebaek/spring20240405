@@ -37,7 +37,7 @@ public class Controller25 {
                 SELECT *
                 FROM Employees
                 WHERE LastName = '""" + searchName + "'";
-        
+
         Connection conn = dataSource.getConnection();
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
@@ -57,5 +57,12 @@ public class Controller25 {
 
         }
         model.addAttribute("employees", list);
+    }
+
+    @GetMapping("sub2")
+    public void method2(@RequestParam(value = "name", required = false) String search) {
+        // todo : name 요청 파라미터와 일치하는 상품명으로 상품(Products) 조회
+        //  예) SELECT * FROM Products WHERE ProductName = 'Chais'
+
     }
 }
