@@ -68,7 +68,26 @@ WHERE BirthDate >= '1955-01-01';
 
 
 # todo : 미국에 있는 공급자(Suppliers) 조회
+SELECT *
+FROM Suppliers
+WHERE Country = 'usa';
 # todo : Last name이 Fuller인 직원(Employees) 조회
+SELECT LastName, FirstName
+FROM Employees
+WHERE LastName = 'fuller';
 # todo : CategoryID가 3번인 상품(Products) 조회
+SELECT *
+FROM Products
+WHERE CategoryID = 3;
 # todo : 가격이 20.00 이상인 상품(Products) 조회
+SELECT *
+FROM Products
+WHERE Price >= 20.00;
 # todo : 주문일이 1997년 전(1997년 포함안함)인 주문(Orders) 조회
+DESC Orders;
+SELECT *
+FROM Orders
+WHERE OrderDate < '1997-01-01';
+SELECT *
+FROM Orders
+WHERE OrderDate <= '1996-12-31';
