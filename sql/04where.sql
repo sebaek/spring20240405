@@ -43,3 +43,25 @@ WHERE CustomerID != 1;
 SELECT *
 FROM Customers
 WHERE CustomerID <> 1;
+
+# 문자열 형식(대소문자 구분 없음)
+SELECT *
+FROM Customers
+WHERE CustomerName >= 'S';
+SELECT *
+FROM Customers
+WHERE CustomerName >= 's';
+SELECT *
+FROM Customers
+WHERE Country = 'Germany';
+SELECT *
+FROM Customers
+WHERE Country = 'gERmAny';
+
+# 날짜 형식
+SELECT *
+FROM Employees
+WHERE BirthDate = '1968-12-08';
+SELECT *
+FROM Employees
+WHERE BirthDate >= '1955-01-01';
