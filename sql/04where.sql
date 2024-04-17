@@ -72,7 +72,8 @@ SELECT *
 FROM Suppliers
 WHERE Country = 'usa';
 # todo : Last name이 Fuller인 직원(Employees) 조회
-SELECT LastName, FirstName
+DESC Employees;
+SELECT *
 FROM Employees
 WHERE LastName = 'fuller';
 # todo : CategoryID가 3번인 상품(Products) 조회
