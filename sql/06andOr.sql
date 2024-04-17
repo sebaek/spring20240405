@@ -39,7 +39,20 @@ WHERE SupplierID = 2
     OR Price > 20);
 
 # todo : 국가 UK나 USA에 있는 고객들 조회
+SELECT *
+FROM Customers
+WHERE Country = 'UK'
+   OR Country = 'USA';
+
 # todo : 도시가 Madrid 나 London 에 있는 고객들 조회
+SELECT *
+FROM Customers
+WHERE City = 'madrid'
+   OR City = 'london';
 # todo : 1997년 5월에 주문한 주문(Orders)들
+SELECT *
+FROM Orders
+WHERE OrderDate >= '1997-05-01'
+  AND OrderDate < '1997-06-01';
 
 
