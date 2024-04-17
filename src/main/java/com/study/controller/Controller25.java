@@ -271,4 +271,7 @@ public class Controller25 {
         model.addAttribute("customerList", list);
         return "main25/sub4CustomerList";
     }
+
+    // todo:
+    //  조회 문자열이 last name 또는 first name에 포함된 직원들 조회 메소드 작성
 }
