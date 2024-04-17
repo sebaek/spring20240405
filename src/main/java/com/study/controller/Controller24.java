@@ -78,5 +78,19 @@ public class Controller24 {
 
     // todo: 세번째 메소드를 만들어서
     //  고객이 있는 나라들을 중복없이 조회 후 jsp에서 출력
+    @GetMapping("sub3")
+    public void method3(Model model) throws Exception {
+        var list = new ArrayList<String>();
+        String sql = "SELECT DISTINCT Country FROM Customers";
 
+        Statement stmt = dataSource.getConnection().createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+
+        try (rs; stmt) {
+            while (rs.next()) {
+                list.add(rs.getString(1));
+            }
+        }
+        model.addAttribute("countryList", list);
+    }
 }
