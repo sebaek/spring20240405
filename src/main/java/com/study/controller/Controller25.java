@@ -195,10 +195,44 @@ public class Controller25 {
                 list.add(obj);
             }
         }
-        
+
         model.addAttribute("customerList", list);
         model.addAttribute("prevSearch", search);
 
         return "main25/sub4CustomerList";
+    }
+
+    // todo: 상품명으로 상품들 조회 메소드 작성
+    @GetMapping("sub6")
+    public String method6(String search, Model model) throws SQLException {
+        var list = new ArrayList<MyBean256Product>();
+
+        String sql = """
+                SELECT *
+                FROM Products
+                WHERE ProductName LIKE ?
+                """;
+        String keyword = "%" + search + "%";
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, keyword);
+        ResultSet rs = pstmt.executeQuery();
+        try (rs; conn; pstmt) {
+            while (rs.next()) {
+                MyBean256Product p = new MyBean256Product();
+                p.setId(rs.getInt(1));
+                p.setName(rs.getString(2));
+                p.setSupplierId(rs.getInt(3));
+                p.setCategoryId(rs.getInt(4));
+                p.setUnit(rs.getString(5));
+                p.setPrice(rs.getDouble(6));
+                list.add(p);
+            }
+        }
+
+        model.addAttribute("prevSearch", search);
+        model.addAttribute("products", list);
+
+        return "main25/sub6ProductList";
     }
 }
