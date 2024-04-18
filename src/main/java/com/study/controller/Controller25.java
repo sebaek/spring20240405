@@ -1,9 +1,6 @@
 package com.study.controller;
 
-import com.study.domain.MyBean251;
-import com.study.domain.MyBean252;
-import com.study.domain.MyBean254Customer;
-import com.study.domain.MyBean258Employee;
+import com.study.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

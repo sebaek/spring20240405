@@ -1,4 +1,4 @@
-package com.study.controller;
+package com.study.domain;
 
 import lombok.Data;
 
