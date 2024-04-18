@@ -3,6 +3,7 @@ package com.study.controller;
 import com.study.domain.MyBean251;
 import com.study.domain.MyBean252;
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -274,4 +275,40 @@ public class Controller25 {
 
     // todo:
     //  조회 문자열이 last name 또는 first name에 포함된 직원들 조회 메소드 작성
+    @GetMapping("sub8")
+    public String method8(String name, Model model) throws SQLException {
+        var list = new ArrayList<MyBean258Employee>();
+        String sql = """
+                SELECT *
+                FROM Employees
+                WHERE LastName LIKE ?
+                   OR FirstName LIKE ?
+                """;
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setString(1, "%" + name + "%");
+        pstmt.setString(2, "%" + name + "%");
+        ResultSet rs = pstmt.executeQuery();
+
+        try (rs; conn; pstmt) {
+            while (rs.next()) {
+                MyBean258Employee row = new MyBean258Employee();
+                row.setId(rs.getInt(1));
+                row.setLastName(rs.getString(2));
+                row.setFirstName(rs.getString(3));
+                row.setBirthDate(rs.getString(4));
+                row.setPhoto(rs.getString(5));
+                row.setNotes(rs.getString(6));
+
+                list.add(row);
+
+            }
+        }
+
+        model.addAttribute("prevSearch", name);
+        model.addAttribute("employeeList", list);
+
+        return "main25/sub8EmployeeList";
+    }
+
 }
