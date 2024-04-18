@@ -22,6 +22,20 @@
     <button>조회</button>
 </form>
 <hr>
+<form>
+    카테고리 선택
+    <div>
+        <select name="category" multiple>
+            <c:forEach items="${categoryList}" var="category">
+                <option value="${category.id}">${category.name}</option>
+            </c:forEach>
+        </select>
+    </div>
+    <div>
+        <button>조회</button>
+    </div>
+</form>
+<hr>
 
 <c:if test="${empty products}" var="emptyProducts">
     <p>조회된 상품이 없습니다.</p>
