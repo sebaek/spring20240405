@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 @Controller
@@ -59,5 +56,26 @@ public class Controller26 {
         model.addAttribute("orderList", list);
 
         return "main26/sub1OrderList";
+    }
+
+    @GetMapping("sub2")
+    public String method2(Model model) throws Exception {
+
+        String sql = """
+                SELECT DISTINCT Country
+                FROM Customers
+                """;
+        Connection conn = dataSource.getConnection();
+        Statement stmt = conn.createStatement();
+        ResultSet rs = stmt.executeQuery(sql);
+        var countryList = new ArrayList<String>();
+        try (stmt; rs;) {
+            while (rs.next()) {
+                countryList.add(rs.getString(1));
+            }
+            model.addAttribute("countryList", countryList);
+        }
+
+        return "main25/sub4CustomerList";
     }
 }
