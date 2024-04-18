@@ -45,6 +45,23 @@ ORDER BY 2, 3;
 -- ORDER BY CategoryId, Price;
 
 # todo : 나이가 많은 직원부터 나이가 적은 직원순으로 직원 조회
+SELECT *
+FROM Employees
+ORDER BY BirthDate;
 # todo : 국가명, 도시명 순으로 고객 조회
+SELECT *
+FROM Customers
+ORDER BY Country, City;
+
+DESC Customers;
+SELECT *
+FROM Customers
+ORDER BY 7, 5;
 # todo : 도시명 순으로 공급자 조회
+SELECT *
+FROM Suppliers
+ORDER BY City;
 # todo : First Name의 역순으로 직원 조회
+SELECT *
+FROM Employees
+ORDER BY FirstName DESC;

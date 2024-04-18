@@ -120,6 +120,7 @@ public class Controller26 {
         return "main25/sub4CustomerList";
     }
 
+    // todo : 상품 조회 결과가 카테고리, 가격순으로 조회 되도록 코드 수정
     @GetMapping("sub3")
     public String method3(@RequestParam(value = "category", required = false) String[] categorySelect,
                           Model model) throws Exception {
