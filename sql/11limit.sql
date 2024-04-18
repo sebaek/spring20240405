@@ -47,3 +47,43 @@ WHERE CategoryID = 3
 ORDER BY Price DESC
 LIMIT 2;
 
+
+# LIMIT OFFSET, 5
+# OFFSET 부터 5개
+SELECT *
+FROM Products
+ORDER BY Price
+LIMIT 5;
+
+SELECT *
+FROM Products
+ORDER BY Price
+LIMIT 0, 5;
+
+SELECT *
+FROM Products
+ORDER BY Price
+LIMIT 1, 5;
+
+# paging
+
+# 한 페이지에 10개씩 조회할 때
+# 1페이지 : LIMIT 0, 10
+SELECT CustomerID, CustomerName
+FROM Customers
+ORDER BY CustomerID
+LIMIT 0, 10;
+
+# 2페이지 : LIMIT 10, 10
+SELECT CustomerID, CustomerName
+FROM Customers
+ORDER BY CustomerID
+LIMIT 10, 10;
+
+# 3페이지 : LIMIT 20, 10
+SELECT CustomerID, CustomerName
+FROM Customers
+ORDER BY CustomerID
+LIMIT 20, 10;
+
+# n페이지 : LIMIT (n-1)*한페이지의게시물수, 한페이지의게시물수
