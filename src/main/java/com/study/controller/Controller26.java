@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean256Product;
 import com.study.domain.MyBean261Order;
 import com.study.domain.MyBean263Category;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
 import java.sql.*;
@@ -119,8 +121,51 @@ public class Controller26 {
     }
 
     @GetMapping("sub3")
-    public String method3(Model model) throws Exception {
+    public String method3(@RequestParam(value = "category", required = false) String[] categorySelect,
+                          Model model) throws Exception {
         Connection conn = dataSource.getConnection();
+
+        if (categorySelect != null && categorySelect.length > 0) {
+
+            String marks = "";
+            for (int i = 0; i < categorySelect.length; i++) {
+                marks += "?";
+                if (i != categorySelect.length - 1) {
+                    marks += ",";
+                }
+            }
+            String sql = STR."""
+                SELECT *
+                FROM Products
+                WHERE CategoryId IN (\{marks})
+                """;
+
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            for (int i = 0; i < categorySelect.length; i++) {
+                pstmt.setString((i + 1), categorySelect[i]);
+            }
+
+            ResultSet resultSet = pstmt.executeQuery();
+
+            var productList = new ArrayList<MyBean256Product>();
+            try (resultSet; pstmt;) {
+
+                while (resultSet.next()) {
+                    MyBean256Product p = new MyBean256Product();
+                    p.setId(resultSet.getInt(1));
+                    p.setName(resultSet.getString(2));
+                    p.setSupplierId(resultSet.getInt(3));
+                    p.setCategoryId(resultSet.getInt(4));
+                    p.setUnit(resultSet.getString(5));
+                    p.setPrice(resultSet.getDouble(6));
+
+                    productList.add(p);
+                }
+                model.addAttribute("products", productList);
+            }
+        }
+
+
         String categorySql = "SELECT * FROM Categories";
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(categorySql);
