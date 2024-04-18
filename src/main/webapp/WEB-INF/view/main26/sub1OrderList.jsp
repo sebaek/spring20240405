@@ -18,11 +18,11 @@
 <h3>주문일로 주문 조회</h3>
 <form>
     <div>시작 :
-        <input type="date" name="start" value="1996-07-01">
+        <input type="date" name="start" value="${prevStart}">
     </div>
     <div>
         종료 :
-        <input type="date" name="end" value="1996-07-31">
+        <input type="date" name="end" value="${prevEnd}">
     </div>
     <div>
         <button>조회</button>
@@ -34,7 +34,7 @@
         조회된 내용이 없습니다.
     </div>
 </c:if>
-<c:if test="${orderList}">
+<c:if test="${not empty orderList}">
 
     <table>
         <thead>
