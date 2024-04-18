@@ -1,5 +1,6 @@
 package com.study.controller;
 
+import com.study.domain.MyBean254Customer;
 import com.study.domain.MyBean261Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,17 +60,54 @@ public class Controller26 {
     }
 
     @GetMapping("sub2")
-    public String method2(Model model) throws Exception {
+    public String method2(String[] country, Model model) throws Exception {
+        Connection conn = dataSource.getConnection();
+
+        if (country != null && country.length > 0) {
+            String questionMarks = "";
+            for (int i = 0; i < country.length; i++) {
+                questionMarks = questionMarks + "?";
+                if (i != country.length - 1) {
+                    questionMarks = questionMarks + ",";
+                }
+            }
+            String customerSql = STR."""
+                SELECT *
+                FROM Customers
+                WHERE Country IN (\{questionMarks})
+                """;
+
+            var customerList = new ArrayList<MyBean254Customer>();
+            PreparedStatement pstmt = conn.prepareStatement(customerSql);
+            for (int i = 0; i < country.length; i++) {
+                pstmt.setString((i + 1), country[0]);
+            }
+            ResultSet resultSet = pstmt.executeQuery();
+            try (pstmt; resultSet) {
+
+                while (resultSet.next()) {
+                    MyBean254Customer data = new MyBean254Customer();
+                    data.setId(resultSet.getInt(1));
+                    data.setName(resultSet.getString(2));
+                    data.setContactName(resultSet.getString(3));
+                    data.setAddress(resultSet.getString(4));
+                    data.setCity(resultSet.getString(5));
+                    data.setPostalCode(resultSet.getString(6));
+                    data.setCountry(resultSet.getString(7));
+                    customerList.add(data);
+                }
+                model.addAttribute("customerList", customerList);
+            }
+        }
 
         String sql = """
                 SELECT DISTINCT Country
                 FROM Customers
                 """;
-        Connection conn = dataSource.getConnection();
         Statement stmt = conn.createStatement();
         ResultSet rs = stmt.executeQuery(sql);
         var countryList = new ArrayList<String>();
-        try (stmt; rs;) {
+        try (stmt; rs; conn) {
             while (rs.next()) {
                 countryList.add(rs.getString(1));
             }
