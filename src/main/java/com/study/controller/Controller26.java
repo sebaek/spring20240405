@@ -80,7 +80,7 @@ public class Controller26 {
             var customerList = new ArrayList<MyBean254Customer>();
             PreparedStatement pstmt = conn.prepareStatement(customerSql);
             for (int i = 0; i < country.length; i++) {
-                pstmt.setString((i + 1), country[0]);
+                pstmt.setString((i + 1), country[i]);
             }
             ResultSet resultSet = pstmt.executeQuery();
             try (pstmt; resultSet) {
