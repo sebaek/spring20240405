@@ -139,6 +139,7 @@ public class Controller26 {
                 SELECT *
                 FROM Products
                 WHERE CategoryId IN (\{marks})
+                ORDER BY CategoryId, Price
                 """;
 
             PreparedStatement pstmt = conn.prepareStatement(sql);

@@ -65,3 +65,13 @@ ORDER BY City;
 SELECT *
 FROM Employees
 ORDER BY FirstName DESC;
+
+SELECT *
+FROM Products
+WHERE CategoryID IN (5, 6, 8)
+ORDER BY CategoryID, Price;
+
+
+
+
+
