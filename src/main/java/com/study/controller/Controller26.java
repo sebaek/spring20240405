@@ -161,6 +161,7 @@ public class Controller26 {
 
                     productList.add(p);
                 }
+                model.addAttribute("prevCategorySelect", categorySelect);
                 model.addAttribute("products", productList);
             }
         }

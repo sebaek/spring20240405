@@ -27,7 +27,14 @@
     <div>
         <select name="category" multiple>
             <c:forEach items="${categoryList}" var="category">
-                <option value="${category.id}">${category.name}</option>
+                <c:set value="false" var="selected"></c:set>
+                <c:forEach items="${prevCategorySelect}" var="prevSelect">
+                    <c:if test="${category.id == prevSelect}">
+                        <c:set var="selected" value="true"></c:set>
+                    </c:if>
+                </c:forEach>
+
+                <option ${selected ? "selected" : ""} value="${category.id}">${category.name}</option>
             </c:forEach>
         </select>
     </div>
