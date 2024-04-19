@@ -49,6 +49,14 @@ public class Controller27 {
         model.addAttribute("lastPageNumber", lastPageNumber);
 
         // 페이지 링크의 begin, end 산출
+        int endPageNumber = (((page - 1) / 10) + 1) * 10;
+        int beginPageNumber = endPageNumber - 9;
+
+        // endPageNumber 가 최종페이지를 넘을 순 없다.
+        endPageNumber = Math.min(endPageNumber, lastPageNumber);
+
+        model.addAttribute("endPageNumber", endPageNumber);
+        model.addAttribute("beginPageNumber", beginPageNumber);
 
 
         // 고객 레코드 조회
