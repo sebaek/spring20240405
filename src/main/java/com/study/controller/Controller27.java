@@ -25,7 +25,7 @@ public class Controller27 {
         String sql = """
                 SELECT * 
                 FROM Customers
-                ORDER BY CustomerID
+                ORDER BY CustomerID DESC
                 LIMIT ?, 10
                 """;
 

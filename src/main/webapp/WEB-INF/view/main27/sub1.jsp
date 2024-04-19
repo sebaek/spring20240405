@@ -19,6 +19,13 @@
     </style>
 </head>
 <body>
+<div>
+    <c:if test="${not empty message}">
+        <div style="padding: 20px; background-color: skyblue">
+                ${message}
+        </div>
+    </c:if>
+</div>
 <hr>
 <table>
     <thead>

@@ -50,10 +50,10 @@ public class Controller28 {
             }
         }
 
-        return "redirect:/main28/sub1";
+        return "redirect:/main27/sub1";
     }
 
 
     // todo : 새 직원 입력하기
-    
+
 }
