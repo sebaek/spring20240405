@@ -50,6 +50,15 @@
             <a href="${link}">${pageNumber}</a>
         </span>
     </c:forEach>
+
+    <c:if test="${not empty nextPageNumber}">
+        <c:url var="link" value="/main27/sub1">
+            <c:param name="page" value="${nextPageNumber}"/>
+        </c:url>
+        <span>
+        <a href="${link}">다음</a>
+    </span>
+    </c:if>
 </div>
 
 </body>
