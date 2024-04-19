@@ -9,10 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 
 @Controller
@@ -35,6 +32,26 @@ public class Controller27 {
         var list = new ArrayList<MyBean254Customer>();
 
         Connection conn = dataSource.getConnection();
+
+        // 페이지 정보 산출
+        // 총 레코드 수 조회
+        String countSql = "SELECT COUNT(*) FROM Customers";
+        Statement stmt = conn.createStatement();
+        ResultSet rs1 = stmt.executeQuery(countSql);
+        int total = 0;
+        try (rs1; stmt;) {
+            if (rs1.next()) {
+                total = rs1.getInt(1);
+            }
+        }
+        // 마지막 페이지 번호
+        int lastPageNumber = (total - 1) / 10 + 1;
+        model.addAttribute("lastPageNumber", lastPageNumber);
+
+        // 페이지 링크의 begin, end 산출
+
+
+        // 고객 레코드 조회
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setInt(1, offset);
         ResultSet rs = ps.executeQuery();
