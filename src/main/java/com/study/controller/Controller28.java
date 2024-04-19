@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.sql.DataSource;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 @Controller
 @RequestMapping("main28")
@@ -20,8 +23,7 @@ public class Controller28 {
     }
 
     @PostMapping("sub1")
-    public void sub2(MyBean254Customer customer) {
-        System.out.println("customer = " + customer);
+    public void sub2(MyBean254Customer customer) throws SQLException {
 
         String sql = """
                 INSERT INTO Customers
@@ -29,6 +31,18 @@ public class Controller28 {
                 VALUES (?, ?, ?, ?, ?, ?)
                 """;
 
-        System.out.println("새 데이터 입력하는 일");
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+
+        try (pstmt; conn) {
+            pstmt.setString(1, customer.getName());
+            pstmt.setString(2, customer.getContactName());
+            pstmt.setString(3, customer.getAddress());
+            pstmt.setString(4, customer.getCity());
+            pstmt.setString(5, customer.getPostalCode());
+            pstmt.setString(6, customer.getCountry());
+
+            int rowCount = pstmt.executeUpdate();
+        }
     }
 }
