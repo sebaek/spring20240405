@@ -98,4 +98,7 @@ public class Controller27 {
 
         return "main27/sub1";
     }
+
+    // todo : 직원 테이블 조회 (paging 처리)
+    //   메소드와 jsp 작성
 }
