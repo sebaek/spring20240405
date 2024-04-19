@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -20,10 +21,11 @@ public class Controller28 {
 
     @GetMapping("sub1")
     public void sub1() {
+
     }
 
     @PostMapping("sub1")
-    public void sub2(MyBean254Customer customer) throws SQLException {
+    public String sub2(MyBean254Customer customer, RedirectAttributes rttr) throws SQLException {
 
         String sql = """
                 INSERT INTO Customers
@@ -43,6 +45,15 @@ public class Controller28 {
             pstmt.setString(6, customer.getCountry());
 
             int rowCount = pstmt.executeUpdate();
+            if (rowCount == 1) {
+                rttr.addFlashAttribute("message", "새 고객이 등록되었습니다.");
+            }
         }
+
+        return "redirect:/main28/sub1";
     }
+
+
+    // todo : 새 직원 입력하기
+    
 }

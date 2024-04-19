@@ -5,6 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+<div>
+    <c:if test="${not empty message}">
+        <div style="padding: 20px; background-color: skyblue">
+                ${message}
+        </div>
+    </c:if>
+</div>
 <h3>고객 정보 입력</h3>
 <form action="" method="post">
     <div>
