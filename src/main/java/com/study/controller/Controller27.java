@@ -64,7 +64,12 @@ public class Controller27 {
             model.addAttribute("nextPageNumber", nextPageNumber);
         }
 
-
+        // 이전 버튼 클릭 시 이동해야 하는 페이지 prevPageNumber 산출
+        int prevPageNumber = beginPageNumber - 10;
+        if (prevPageNumber >= 1) {
+            model.addAttribute("prevPageNumber", prevPageNumber);
+        }
+        
         // 고객 레코드 조회
         PreparedStatement ps = conn.prepareStatement(sql);
         ps.setInt(1, offset);
