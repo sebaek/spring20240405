@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -55,5 +56,43 @@ public class Controller28 {
 
 
     // todo : 새 직원 입력하기
-    
+
+    // 1.form view
+    @GetMapping("sub2")
+    public String method3() {
+
+        return "main28/sub2";
+    }
+
+    // 2.저장 처리 로직
+    @PostMapping("sub2")
+    public String method4(MyBean258Employee employee, RedirectAttributes rttr) throws SQLException {
+        String sql = """
+                INSERT INTO Employees
+                (LastName, FirstName, BirthDate, Photo, Notes)
+                VALUES (?, ?, ?, ?, ?)
+                """;
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+
+        try (conn; pstmt) {
+            pstmt.setString(1, employee.getLastName());
+            pstmt.setString(2, employee.getFirstName());
+            pstmt.setString(3, employee.getBirthDate());
+            pstmt.setString(4, employee.getPhoto());
+            pstmt.setString(5, employee.getNotes());
+
+            int rowCount = pstmt.executeUpdate();
+            if (rowCount == 1) {
+                rttr.addFlashAttribute("message", "새 직원이 입력되었습니다.");
+            } else {
+                rttr.addFlashAttribute("message", "문제가 발생하였습니다.");
+            }
+        }
+
+        return "redirect:/main28/sub2";
+
+
+    }
+
 }
