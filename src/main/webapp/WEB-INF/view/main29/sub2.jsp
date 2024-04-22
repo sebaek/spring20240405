@@ -39,11 +39,11 @@
         <textarea name="" readonly id="" cols="30" rows="10">${employee.notes}</textarea>
     </div>
 
-    <form action="/main29/sub2/delete" method="post">
+    <form action="/main29/sub2/delete" method="post" onsubmit="return confirm('삭제하시겠습니까?')">
         <input hidden type="text" name="id" readonly value="${employee.id}">
         <button>삭제</button>
     </form>
 </c:if>
-    
+
 </body>
 </html>
