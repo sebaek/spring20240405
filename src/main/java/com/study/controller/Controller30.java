@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -88,5 +89,71 @@ public class Controller30 {
     }
 
     // todo; 직원 조회 및 수정
-    
+    @GetMapping("sub2")
+    public void method3(Integer id, Model model) throws SQLException {
+        if (id != null) {
+
+            String sql = """
+                    SELECT *
+                    FROM Employees
+                    WHERE EmployeeId = ?
+                    """;
+            Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+
+            try (rs; pstmt; conn) {
+                if (rs.next()) {
+                    MyBean258Employee e = new MyBean258Employee();
+                    e.setId(rs.getInt(1));
+                    e.setLastName(rs.getString(2));
+                    e.setFirstName(rs.getString(3));
+                    e.setBirthDate(rs.getString(4));
+                    e.setPhoto(rs.getString(5));
+                    e.setNotes(rs.getString(6));
+
+                    model.addAttribute("employee", e);
+                }
+            }
+        }
+    }
+
+    @PostMapping("sub2/update")
+    public String method4(MyBean258Employee employee, RedirectAttributes rttr) throws SQLException {
+        String sql = """
+                UPDATE Employees
+                SET 
+                    FirstName = ?,
+                    LastName = ?,
+                    Photo = ?,
+                    BirthDate = ?,
+                    Notes = ?
+                WHERE 
+                    EmployeeId = ?
+                """;
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        try (pstmt; conn) {
+
+            pstmt.setString(1, employee.getFirstName());
+            pstmt.setString(2, employee.getLastName());
+            pstmt.setString(3, employee.getPhoto());
+            pstmt.setString(4, employee.getBirthDate());
+            pstmt.setString(5, employee.getNotes());
+            pstmt.setInt(6, employee.getId());
+
+            int rowCount = pstmt.executeUpdate();
+
+            if (rowCount > 0) {
+                rttr.addFlashAttribute("message", employee.getId() + "번 직원 정보가 수정되었습니다.");
+            } else {
+                rttr.addFlashAttribute("message", "수정되지 않았습니다.");
+
+            }
+        }
+
+        rttr.addAttribute("id", employee.getId());
+        return "redirect:/main30/sub2";
+    }
 }
