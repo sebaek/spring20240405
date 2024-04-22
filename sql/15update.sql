@@ -42,3 +42,23 @@ SELECT *
 FROM Customers;
 UPDATE Customers
 SET Country = '영국';
+
+
+SELECT *
+FROM Products
+WHERE ProductID = 1;
+
+UPDATE
+    Products
+SET Price = Price * 2
+WHERE ProductID = 1;
+
+# todo : 2번 카테고리에 있는 상품들의 값을 3배로 업데이트
+SELECT *
+FROM Products
+WHERE CategoryID = 2;
+
+UPDATE
+    Products
+SET Price = Price * 3
+WHERE CategoryID = 2;
