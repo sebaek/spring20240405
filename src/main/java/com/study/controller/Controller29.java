@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -77,6 +78,54 @@ public class Controller29 {
     }
 
     // todo; 직원 지우기
-    
+    @GetMapping("sub2")
+    public void method3(Integer id, Model model) throws Exception {
+        if (id != null) {
+
+            String sql = """
+                    SELECT *
+                    FROM Employees
+                    WHERE EmployeeId = ?
+                    """;
+            Connection conn = dataSource.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            ResultSet rs = pstmt.executeQuery();
+            try (rs; pstmt; conn) {
+                if (rs.next()) {
+                    MyBean258Employee e = new MyBean258Employee();
+                    e.setId(rs.getInt(1));
+                    e.setLastName(rs.getString(2));
+                    e.setFirstName(rs.getString(3));
+                    e.setBirthDate(rs.getString(4));
+                    e.setPhoto(rs.getString(5));
+                    e.setNotes(rs.getString(6));
+
+                    model.addAttribute("employee", e);
+                }
+            }
+        }
+
+    }
+
+    @PostMapping("sub2/delete")
+    public String method4(Integer id, RedirectAttributes rttr) throws SQLException {
+        String sql = """
+                DELETE FROM Employees
+                WHERE EmployeeId = ?
+                """;
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, id);
+        try (pstmt; conn) {
+            int rowCount = pstmt.executeUpdate();
+            if (rowCount > 0) {
+                rttr.addFlashAttribute("message", id + "번 직원이 삭제 되었습니다.");
+            } else {
+                rttr.addFlashAttribute("message", "삭제되지 않았습니다.");
+            }
+        }
+        return "redirect:/main29/sub2";
+    }
 
 }
