@@ -24,7 +24,11 @@ public class Controller30 {
     private DataSource dataSource;
 
     // 직접 만든 객체(dependency)
-    private Mapper01 mapper = new Mapper01();
+//    private Mapper01 mapper = new Mapper01();
+
+    // Inversion Of Control (IOC)
+    @Autowired
+    private Mapper01 mapper;
 
     @GetMapping("sub1")
     public void method1(Integer id, Model model) throws Exception {

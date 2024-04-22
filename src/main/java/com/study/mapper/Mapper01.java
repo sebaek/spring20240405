@@ -1,12 +1,15 @@
 package com.study.mapper;
 
 import com.study.domain.MyBean254Customer;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+// Inversion Of Control (IOC)
+@Component
 public class Mapper01 {
 
     public MyBean254Customer getCustomerById(Integer id) throws Exception {
