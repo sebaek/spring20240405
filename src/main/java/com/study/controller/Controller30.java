@@ -27,6 +27,7 @@ public class Controller30 {
 //    private Mapper01 mapper = new Mapper01();
 
     // Inversion Of Control (IOC)
+    // Dependency Injection (DI)
     @Autowired
     private Mapper01 mapper;
 
