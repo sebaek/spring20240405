@@ -2,6 +2,7 @@ package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
 import com.study.domain.MyBean258Employee;
+import com.study.mapper.Mapper01;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,34 +23,13 @@ public class Controller30 {
     @Autowired
     private DataSource dataSource;
 
+    // 직접 만든 객체(dependency)
+    private Mapper01 mapper = new Mapper01();
+
     @GetMapping("sub1")
     public void method1(Integer id, Model model) throws Exception {
-        if (id != null) {
-            String sql = """
-                    SELECT *
-                    FROM Customers
-                    WHERE CustomerId = ?
-                    """;
-            Connection conn = dataSource.getConnection();
-            PreparedStatement pstmt = conn.prepareStatement(sql);
-            pstmt.setInt(1, id);
-            ResultSet rs = pstmt.executeQuery();
-            try (rs; pstmt; conn) {
-                if (rs.next()) {
-                    MyBean254Customer c = new MyBean254Customer();
-                    c.setId(rs.getInt(1));
-                    c.setName(rs.getString(2));
-                    c.setContactName(rs.getString(3));
-                    c.setAddress(rs.getString(4));
-                    c.setCity(rs.getString(5));
-                    c.setPostalCode(rs.getString(6));
-                    c.setCountry(rs.getString(7));
-
-                    model.addAttribute("customer", c);
-                }
-            }
-
-        }
+        MyBean254Customer c = mapper.getCustomerById(id);
+        model.addAttribute("customer", c);
     }
 
     @PostMapping("sub1/update")
