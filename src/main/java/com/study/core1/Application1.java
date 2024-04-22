@@ -8,28 +8,28 @@ public class Application1 {
 
         System.out.println("main method ");
 
-        Controller c = new Controller();
-        Dao dao = new Dao();
-        c.setDao(dao);
+        Controller1 c = new Controller1();
+        Dao1 dao1 = new Dao1();
+        c.setDao(dao1);
         c.action();
     }
 }
 
-class Dao {
+class Dao1 {
     public void select() {
         System.out.println("select datas...");
     }
 }
 
-class Controller {
+class Controller1 {
     //dependency
-    private Dao dao;
+    private Dao1 dao1;
 
-    public void setDao(Dao dao) {
-        this.dao = dao;
+    public void setDao(Dao1 dao1) {
+        this.dao1 = dao1;
     }
 
     public void action() {
-        dao.select();
+        dao1.select();
     }
 }

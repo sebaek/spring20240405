@@ -12,26 +12,26 @@ import org.springframework.stereotype.Component;
 public class Application3 {
     public static void main(String[] args) {
         BeanFactory factory = SpringApplication.run(Application3.class);
-        Dao bean1 = factory.getBean(Dao.class);
-        Controller bean2 = factory.getBean(Controller.class);
+        Dao3 bean1 = factory.getBean(Dao3.class);
+        Controller3 bean2 = factory.getBean(Controller3.class);
 
         System.out.println(bean1);
         System.out.println(bean2);
 
-        System.out.println(bean2.getDao());
+        System.out.println(bean2.getDao3());
     }
 }
 
 @Component
-class Dao {
+class Dao3 {
 }
 
 @Component
 @Getter
 @Setter
-class Controller {
+class Controller3 {
 
     // Dependency Injection (DI)
     @Autowired
-    private Dao dao;
+    private Dao3 dao3;
 }
