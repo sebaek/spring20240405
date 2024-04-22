@@ -5,6 +5,12 @@
     <title>Title</title>
 </head>
 <body>
+
+<c:if test="${not empty message}">
+    <div style="background-color: pink; padding: 20px;">
+            ${message}
+    </div>
+</c:if>
 <h3>고객 조회</h3>
 <form>
     고객 번호
@@ -45,6 +51,15 @@
         국가
         <input type="text" readonly value="${customer.country}">
     </div>
+
+    <form action="/main29/sub1/delete" method="post">
+        <div style="display: none">
+            <input type="text" name="id" value="${customer.id}">
+        </div>
+        <div>
+            <button style="background-color: rosybrown">삭제</button>
+        </div>
+    </form>
 </c:if>
 
 </body>
