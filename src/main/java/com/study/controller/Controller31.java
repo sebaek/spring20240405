@@ -49,6 +49,29 @@ public class Controller31 {
         System.out.println("e = " + e);
     }
 
+    @GetMapping("sub6")
+    public void method6() {
+        MyBean258Employee e = mapper.selectOneEmployee2(4);
+        System.out.println("e = " + e);
+    }
+
+    // /main31/sub7?id=4
+    @GetMapping("sub7")
+    public void method7(Integer id) {
+        MyBean258Employee e = mapper.selectOneEmployee2(id);
+        System.out.println("e = " + e);
+    }
+
+    // todo ; mapper에 selectOneCustomer4 메소드 작성해서
+    //  /main31/sub8?id=9
+    //  로 요청 오면 9번 고객이 출력되도록 하세요.
+    @GetMapping("sub8")
+    public void method8() {
+        MyBean254Customer c = mapper.selectOneCustomer4();
+        System.out.println("c = " + c);
+    }
+
+
 }
 
 
