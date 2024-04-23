@@ -3,6 +3,7 @@ package com.study.controller;
 import com.study.mapper.Mapper03;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -28,5 +29,10 @@ public class Controller32 {
     // todo ;
     //  /main32/sub3?eid=2
     //   2번 직원 삭제하는 메소드와 mapper에 메소드 작성하기
-    
+    @GetMapping("sub3")
+    public void method3(Integer eid) {
+        int rows = mapper.deleteEmployeeById(eid);
+
+        System.out.println(rows + "명 직원 삭제됨");
+    }
 }

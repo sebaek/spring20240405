@@ -18,4 +18,10 @@ public interface Mapper03 {
             WHERE CustomerId = #{id}
             """)
     int deleteOneCustomerById(int id);
+
+    @Delete("""
+            DELETE FROM Employees 
+            WHERE EmployeeId = #{e}
+            """)
+    int deleteEmployeeById(Integer e);
 }
