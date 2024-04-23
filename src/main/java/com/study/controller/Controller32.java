@@ -1,5 +1,6 @@
 package com.study.controller;
 
+import com.study.domain.MyBean254Customer;
 import com.study.mapper.Mapper03;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -35,4 +36,13 @@ public class Controller32 {
 
         System.out.println(rows + "명 직원 삭제됨");
     }
+
+    // name=흥민&contactName=캡틴&city=런던&country=한국&address=토트넘
+    // /main32/sub4?name=흥민&contactName=캡틴&city=런던&country=한국&address=토트넘
+    @GetMapping("sub4")
+    public void method4(MyBean254Customer customer) {
+        mapper.insertCustomer(customer);
+    }
+
+    // todo : 직원 입력 코드 작성해보기
 }
