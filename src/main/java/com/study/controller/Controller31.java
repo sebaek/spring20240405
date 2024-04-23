@@ -66,8 +66,8 @@ public class Controller31 {
     //  /main31/sub8?id=9
     //  로 요청 오면 9번 고객이 출력되도록 하세요.
     @GetMapping("sub8")
-    public void method8() {
-        MyBean254Customer c = mapper.selectOneCustomer4();
+    public void method8(Integer id) {
+        MyBean254Customer c = mapper.selectOneCustomer4(id);
         System.out.println("c = " + c);
     }
 

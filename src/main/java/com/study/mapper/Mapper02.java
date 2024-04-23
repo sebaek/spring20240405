@@ -65,4 +65,17 @@ public interface Mapper02 {
             WHERE EmployeeID = #{id}
             """)
     MyBean258Employee selectOneEmployee2(Integer id);
+
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName name,
+                   ContactName,
+                   Address,
+                   City,
+                   Country,
+                   PostalCode
+            FROM Customers
+            WHERE CustomerID = #{id}
+            """)
+    MyBean254Customer selectOneCustomer4(Integer id);
 }
