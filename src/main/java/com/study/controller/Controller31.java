@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean256Product;
 import com.study.domain.MyBean258Employee;
 import com.study.mapper.Mapper02;
 import lombok.RequiredArgsConstructor;
@@ -96,6 +97,11 @@ public class Controller31 {
     // todo ;
     //  /main31/sub12?min=5&max=55
     //  가격이 5 ~ 55 사이인 상품(Products) 가격 순 조회 후 콘솔에 출력
+    @GetMapping("sub12")
+    public void method12(Double min, Double max) {
+        List<MyBean256Product> list = mapper.selectProductsByPriceBetween(min, max);
+        list.forEach(System.out::println);
+    }
 
 
 }
