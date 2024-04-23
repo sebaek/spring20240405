@@ -79,8 +79,13 @@ public class Controller31 {
         System.out.println("customers = " + customers.size());
     }
 
-    // todo; /main31/sub9
+    // todo; /main31/sub10
     //  모든 직원을 조회한 결과 콘솔에 출력
+    @GetMapping("sub10")
+    public void method10() {
+        List<MyBean258Employee> list = mapper.selectAllEmployees1();
+        list.forEach(System.out::println);
+    }
 
 
 }

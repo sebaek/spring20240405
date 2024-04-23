@@ -92,4 +92,15 @@ public interface Mapper02 {
             FROM Customers
             """)
     List<MyBean254Customer> selectAllCustomer1();
+
+    @Select("""
+            SELECT EmployeeID id,
+                   LastName,
+                   FirstName,
+                   Photo,
+                   Notes,
+                   BirthDate
+            FROM Employees
+            """)
+    List<MyBean258Employee> selectAllEmployees1();
 }
