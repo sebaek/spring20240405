@@ -1,5 +1,6 @@
 package com.study.controller;
 
+import com.study.domain.MyBean254Customer;
 import com.study.mapper.Mapper02;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,5 +18,13 @@ public class Controller31 {
     public void method1() {
         String now = mapper.selectNow();
         System.out.println("now = " + now);
+    }
+
+    @GetMapping("sub2")
+    public String method2() {
+        MyBean254Customer customer = mapper.selectOneCustomer();
+        System.out.println("customer = " + customer);
+
+        return null;
     }
 }
