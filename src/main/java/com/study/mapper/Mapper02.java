@@ -1,6 +1,7 @@
 package com.study.mapper;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -40,4 +41,16 @@ public interface Mapper02 {
             WHERE CustomerID = 1
             """)
     MyBean254Customer selectOneCustomer3();
+
+    @Select("""
+            SELECT EmployeeID id,
+                   FirstName,
+                   LastName,
+                   Notes,
+                   Photo,
+                   BirthDate
+            FROM Employees
+            WHERE EmployeeID = 2
+            """)
+    MyBean258Employee selectOneEmployee1();
 }
