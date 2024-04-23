@@ -1,11 +1,14 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import com.study.mapper.Mapper03;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 @RequiredArgsConstructor
@@ -45,4 +48,21 @@ public class Controller32 {
     }
 
     // todo : 직원 입력 코드 작성해보기
+    @GetMapping("sub5")
+    public void method5() {
+        // form이 있는 view 포워딩
+
+    }
+
+    @PostMapping("sub5")
+    public String method6(MyBean258Employee employee, RedirectAttributes rttr) {
+        int rows = mapper.insertEmployee(employee);
+
+        if (rows > 0) {
+            rttr.addFlashAttribute("message", rows + "명 직원이 입력되었습니다");
+        } else {
+            rttr.addFlashAttribute("message", "입력되지 않았습니다.");
+        }
+        return "redirect:/main32/sub5";
+    }
 }
