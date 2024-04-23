@@ -3,6 +3,8 @@ package com.study.core;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @SpringBootApplication
 public class Application8 {
@@ -19,6 +21,21 @@ public class Application8 {
 }
 
 // todo : @Configuration 클래스와 @Bean 메소드 2개 작성
+@Configuration
+class MyConfiguration8 {
+
+    // Spring Bean 이름은 메소드명
+    @Bean
+    public MyClass81 myBean81() {
+        return new MyClass81();
+    }
+
+    // 빈 이름을 지어줄 수도 있다
+    @Bean("myBean82")
+    public MyClass82 myClass82() {
+        return new MyClass82();
+    }
+}
 
 
 class MyClass81 {
