@@ -1,4 +1,4 @@
-package com.study.core2;
+package com.study.core;
 
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.boot.SpringApplication;

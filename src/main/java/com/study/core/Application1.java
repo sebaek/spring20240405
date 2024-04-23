@@ -1,4 +1,4 @@
-package com.study.core1;
+package com.study.core;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com.study.core3;
+package com.study.core;
 
 import lombok.Getter;
 import lombok.Setter;
