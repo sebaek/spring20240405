@@ -87,6 +87,12 @@ public class Controller31 {
         list.forEach(System.out::println);
     }
 
+    @GetMapping("sub11")
+    public void method11() {
+        List<MyBean254Customer> list = mapper.selectCustomersByCountry("usa", "uk");
+        list.forEach(System.out::println);
+    }
+
 
 }
 

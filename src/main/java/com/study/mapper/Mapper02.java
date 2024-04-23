@@ -104,4 +104,20 @@ public interface Mapper02 {
             ORDER BY BirthDate DESC
             """)
     List<MyBean258Employee> selectAllEmployees1();
+
+
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName name,
+                   ContactName,
+                   Address,
+                   City,
+                   Country,
+                   PostalCode
+            FROM Customers
+            WHERE Country = #{country1} 
+               OR Country = #{country2}
+            ORDER BY Country 
+            """)
+    List<MyBean254Customer> selectCustomersByCountry(String country1, String country2);
 }
