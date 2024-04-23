@@ -101,6 +101,7 @@ public interface Mapper02 {
                    Notes,
                    BirthDate
             FROM Employees
+            ORDER BY BirthDate DESC
             """)
     List<MyBean258Employee> selectAllEmployees1();
 }
