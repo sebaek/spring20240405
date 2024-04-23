@@ -8,6 +8,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("main31")
@@ -70,6 +72,15 @@ public class Controller31 {
         MyBean254Customer c = mapper.selectOneCustomer4(id);
         System.out.println("c = " + c);
     }
+
+    @GetMapping("sub9")
+    public void method9() {
+        List<MyBean254Customer> customers = mapper.selectAllCustomer1();
+        System.out.println("customers = " + customers.size());
+    }
+
+    // todo; /main31/sub9
+    //  모든 직원을 조회한 결과 콘솔에 출력
 
 
 }

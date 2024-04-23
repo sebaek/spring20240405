@@ -5,6 +5,8 @@ import com.study.domain.MyBean258Employee;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface Mapper02 {
 
@@ -78,4 +80,16 @@ public interface Mapper02 {
             WHERE CustomerID = #{id}
             """)
     MyBean254Customer selectOneCustomer4(Integer id);
+
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName name,
+                   ContactName,
+                   Address,
+                   City,
+                   Country,
+                   PostalCode
+            FROM Customers
+            """)
+    List<MyBean254Customer> selectAllCustomer1();
 }

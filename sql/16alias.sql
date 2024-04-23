@@ -16,3 +16,10 @@ SELECT ProductID   id,
        ProductName name,
        Price       가격
 FROM Products;
+
+SELECT *
+FROM Customers
+WHERE CustomerID = 3;
+
+SELECT *
+FROM Customers;
