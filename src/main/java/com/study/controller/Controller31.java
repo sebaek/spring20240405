@@ -27,4 +27,21 @@ public class Controller31 {
 
         return null;
     }
+
+    @GetMapping("sub3")
+    public void method3() {
+        MyBean254Customer c = mapper.selectOneCustomer2();
+        System.out.println("c = " + c);
+    }
+
+    @GetMapping("sub4")
+    public void method4() {
+        MyBean254Customer c = mapper.selectOneCustomer3();
+        System.out.println("c = " + c);
+    }
+    
 }
+
+
+
+

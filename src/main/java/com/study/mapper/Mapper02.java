@@ -20,4 +20,24 @@ public interface Mapper02 {
             WHERE CustomerID = 1
             """)
     MyBean254Customer selectOneCustomer();
+
+    @Select("""
+            SELECT *
+            FROM Customers
+            WHERE CustomerID = 1
+            """)
+    MyBean254Customer selectOneCustomer2();
+
+    @Select("""
+            SELECT CustomerID id,
+                   CustomerName name,
+                   ContactName,
+                   Address,
+                   City,
+                   Country,
+                   PostalCode
+            FROM Customers
+            WHERE CustomerID = 1
+            """)
+    MyBean254Customer selectOneCustomer3();
 }
