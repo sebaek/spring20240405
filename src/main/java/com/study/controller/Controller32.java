@@ -24,4 +24,9 @@ public class Controller32 {
         int rowCount = mapper.deleteOneCustomerById(cid);
         System.out.println(rowCount + "명 고객 삭제됨");
     }
+
+    // todo ;
+    //  /main32/sub3?eid=2
+    //   2번 직원 삭제하는 메소드와 mapper에 메소드 작성하기
+    
 }
