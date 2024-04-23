@@ -93,6 +93,10 @@ public class Controller31 {
         list.forEach(System.out::println);
     }
 
+    // todo ;
+    //  /main31/sub12?min=5&max=55
+    //  가격이 5 ~ 55 사이인 상품(Products) 가격 순 조회 후 콘솔에 출력
+
 
 }
 
