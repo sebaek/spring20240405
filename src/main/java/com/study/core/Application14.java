@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
 @SpringBootApplication
-public class Applcation14 {
+public class Application14 {
     public static void main(String[] args) {
-        BeanFactory bf = SpringApplication.run(Applcation14.class, args);
+        BeanFactory bf = SpringApplication.run(Application14.class, args);
         MyClass141 b = bf.getBean(MyClass142.class).getField();
         System.out.println("b = " + b);
     }
