@@ -1,6 +1,7 @@
 package com.study.controller;
 
 import com.study.domain.MyBean254Customer;
+import com.study.domain.MyBean258Employee;
 import com.study.mapper.Mapper02;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,15 @@ public class Controller31 {
         MyBean254Customer c = mapper.selectOneCustomer3();
         System.out.println("c = " + c);
     }
-    
+
+    @GetMapping("sub5")
+    public void method5() {
+        // todo ; 2번 직원의 정보 조회 후 출력
+        MyBean258Employee e = mapper.selectOneEmployee1();
+
+        System.out.println("e = " + e);
+    }
+
 }
 
 
