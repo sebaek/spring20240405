@@ -3,6 +3,7 @@ package com.study.core;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 public class Application6 {
@@ -19,3 +20,10 @@ public class Application6 {
 }
 
 // todo : 2개 Component(Spring Bean) 만들기
+@Component("mybean61")
+class MyClass61 {
+}
+
+@Component
+class MyClass62 {
+}
