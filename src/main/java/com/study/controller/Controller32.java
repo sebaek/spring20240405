@@ -92,4 +92,6 @@ public class Controller32 {
         rttr.addAttribute("id", employee.getId());
         return "redirect:/main32/sub6";
     }
+
+    // todo; 고객 조회 후 수정
 }
