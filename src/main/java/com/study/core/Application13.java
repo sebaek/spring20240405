@@ -1,9 +1,11 @@
 package com.study.core;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Component;
 
 @SpringBootApplication
 public class Application13 {
@@ -18,9 +20,12 @@ public class Application13 {
 
 
 @Getter
+@Component
+@RequiredArgsConstructor
 class MyClass131 {
-    private MyClass132 field;
+    private final MyClass132 field;
 }
 
+@Component
 class MyClass132 {
 }
