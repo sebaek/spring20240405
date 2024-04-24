@@ -2,6 +2,7 @@ package com.study.mapper;
 
 import com.study.domain.MyBean331;
 import com.study.domain.MyBean332;
+import com.study.domain.MyBean333;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -29,4 +30,10 @@ public interface Mapper04 {
             FROM my_table9
             """)
     List<MyBean332> select2();
+
+    @Select("""
+            SELECT *
+            FROM my_table10
+            """)
+    List<MyBean333> select3();
 }

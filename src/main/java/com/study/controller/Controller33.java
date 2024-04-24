@@ -2,6 +2,7 @@ package com.study.controller;
 
 import com.study.domain.MyBean331;
 import com.study.domain.MyBean332;
+import com.study.domain.MyBean333;
 import com.study.mapper.Mapper04;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -33,5 +34,11 @@ public class Controller33 {
     //    mapper.select3() 호출한 결과
     //    List<MyBean333> 타입으로 받아서 출력
     //    SELECT * FROM my_table10
+    @GetMapping("sub3")
+    public void method3() {
+        List<MyBean333> list = mapper.select3();
+        list.forEach(System.out::println);
+    }
+
 }
 
