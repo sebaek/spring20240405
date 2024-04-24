@@ -115,5 +115,23 @@ public class Controller33 {
         return "redirect:/main33/sub9";
     }
 
+    @GetMapping("sub10")
+    public String select10(Model model) {
+        List<MyBean332> list = mapper.select2();
+        model.addAttribute("datas", list);
+
+        return "/main33/sub9";
+    }
+
+    @PostMapping("sub10")
+    public String insert10(String str,
+                           Integer intValue,
+                           Double realValue,
+                           LocalDate dateValue,
+                           LocalDateTime dateTimeValue) {
+        mapper.insert2(str, intValue, realValue, dateValue, dateTimeValue);
+        return "redirect:/main33/sub10";
+    }
+
 }
 
