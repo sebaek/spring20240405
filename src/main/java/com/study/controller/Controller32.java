@@ -105,7 +105,10 @@ public class Controller32 {
     }
 
     @PostMapping("sub7/update")
-    public void method9(MyBean254Customer customer) {
+    public String method9(MyBean254Customer customer, RedirectAttributes rttr) {
         mapper.updateCustomer(customer);
+
+        rttr.addAttribute("id", customer.getId());
+        return "redirect:/main32/sub7";
     }
 }
