@@ -67,4 +67,12 @@ public interface Mapper04 {
             (#{stringCol}, #{intCol}, #{decCol}, #{dateCol}, #{dateTimeCol})
             """)
     int insert4(MyBean332 obj);
+
+    @Insert("""
+            INSERT INTO my_table10
+            (title, name, age, price, published, inserted)
+            VALUES 
+                (#{title}, #{name}, #{age}, #{price}, #{published}, #{inserted})
+            """)
+    int insert5(MyBean333 obj);
 }

@@ -82,7 +82,19 @@ public class Controller33 {
     // todo ; 8번째 메소드 작성
     //  my_table10 에 레코드 추가하기
     //  MyBean333 활용
-    
+    @GetMapping("sub8")
+    public void method8() {
+        MyBean333 obj = new MyBean333();
+        obj.setAge(44);
+        obj.setName("손흥민");
+        obj.setInserted(LocalDateTime.now());
+        obj.setPublished(LocalDate.now());
+        obj.setPrice(10000.00);
+        obj.setTitle("토트넘 주장");
+        
+
+        mapper.insert5(obj);
+    }
 
 }
 
