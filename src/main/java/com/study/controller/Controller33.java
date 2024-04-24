@@ -59,7 +59,14 @@ public class Controller33 {
 
     // todo ; 6번째 메소드 만들어서
     //  my_table10 에 레코드 추가하기
-    
+    @GetMapping("sub6")
+    public void method6() {
+        mapper.insert3("이것이 자바다", "신용권",
+                44, 5000.12,
+                LocalDate.parse("1789-09-09"),
+                LocalDateTime.parse("2020-09-09T09:09:09"));
+    }
+
 
 }
 

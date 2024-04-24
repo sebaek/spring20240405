@@ -51,4 +51,12 @@ public interface Mapper04 {
             (#{c1}, #{c2}, #{c3}, #{c4}, #{c5})
             """)
     int insert2(String c1, Integer c2, Double c3, LocalDate c4, LocalDateTime c5);
+
+    @Insert("""
+            INSERT INTO my_table10
+            (title, name, age, price, published, inserted)
+            VALUES 
+                (#{title}, #{name}, #{age}, #{price}, #{published}, #{inserted})
+            """)
+    int insert3(String title, String name, int age, double price, LocalDate published, LocalDateTime inserted);
 }
