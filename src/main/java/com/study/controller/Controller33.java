@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
@@ -39,6 +41,25 @@ public class Controller33 {
         List<MyBean333> list = mapper.select3();
         list.forEach(System.out::println);
     }
+
+    @GetMapping("sub4")
+    public void method4() {
+        mapper.insert1("hello world", "54321", "876.54", "2024-01-01", "2024-02-02 14:14:14");
+    }
+
+    @GetMapping("sub5")
+    public void method5() {
+        String strVal = "hello mybatis";
+        Integer intVal = 7890;
+        Double doubleVal = 3.14;
+        LocalDate dateVal = LocalDate.parse("1988-01-08");
+        LocalDateTime dateTimeVal = LocalDateTime.parse("1977-07-07T12:14:14");
+        mapper.insert2(strVal, intVal, doubleVal, dateVal, dateTimeVal);
+    }
+
+    // todo ; 6번째 메소드 만들어서
+    //  my_table10 에 레코드 추가하기
+    
 
 }
 
