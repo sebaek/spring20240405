@@ -94,4 +94,13 @@ public class Controller32 {
     }
 
     // todo; 고객 조회 후 수정
+    // /main32/sub7
+    // /main32/sub7?id=3
+    @GetMapping("sub7")
+    public void method8(Integer id, Model model) {
+        if (id != null) {
+            MyBean254Customer c = mapper02.selectOneCustomer4(id);
+            model.addAttribute("customer", c);
+        }
+    }
 }
