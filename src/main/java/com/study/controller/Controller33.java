@@ -151,14 +151,14 @@ public class Controller33 {
     // todo; 아래 두 개의 메소드를 잘 수정해서
     //  my_table10 레코드 조회 및 입력 로직 완성
     @GetMapping("sub12")
-    public String select12(Model model) {
-        return null;
+    public void select12(Model model) {
+        model.addAttribute("list", mapper.select3());
     }
 
     @PostMapping("sub12")
     public String insert12(MyBean333 data) {
-
-        return null;
+        mapper.insert5(data);
+        return "redirect:/main33/sub12";
     }
 }
 
