@@ -107,3 +107,18 @@ INSERT INTO my_table8
 VALUES ('1722-05-01', '3031-01-31 23:59:59');
 SELECT *
 FROM my_table8;
+
+CREATE TABLE my_table9
+(
+    string_col    VARCHAR(30),
+    int_col       INT,
+    dec_col       DEC(10, 2),
+    date_col      DATE,
+    date_time_col DATETIME
+);
+INSERT INTO my_table9
+    (string_col, int_col, dec_col, date_col, date_time_col)
+VALUES ('곧 점심시간!!', 50000, 54321.98, '2024-02-02', '1888-08-01 19:20:30');
+SELECT *
+FROM my_table9;
+DESC my_table9;
