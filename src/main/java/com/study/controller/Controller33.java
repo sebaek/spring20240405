@@ -133,5 +133,19 @@ public class Controller33 {
         return "redirect:/main33/sub10";
     }
 
+    @GetMapping("sub11")
+    public String select11(Model model) {
+        List<MyBean332> list = mapper.select2();
+        model.addAttribute("datas", list);
+
+        return "/main33/sub11";
+    }
+
+    @PostMapping("sub11")
+    public String insert11(MyBean332 data) {
+//        System.out.println("data = " + data);
+        mapper.insert4(data);
+        return "redirect:/main33/sub11";
+    }
 }
 
