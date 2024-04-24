@@ -122,3 +122,21 @@ VALUES ('곧 점심시간!!', 50000, 54321.98, '2024-02-02', '1888-08-01 19:20:3
 SELECT *
 FROM my_table9;
 DESC my_table9;
+
+CREATE TABLE my_table10
+(
+    title     VARCHAR(30),
+    name      VARCHAR(30),
+    age       INT,
+    price     DEC(10, 3),
+    published DATE,
+    inserted  DATETIME
+);
+INSERT INTO my_table10
+    (title, name, age, price, published, inserted)
+VALUES ('이것이 자바다', '신용권', 40, 23422.223, '1999-09-09', '1999-10-10 12:33:12'),
+       ('스프링부트', '홍길동', 50, 2342.123, '2024-01-01', '2024-02-02 09:33:33');
+
+SELECT *
+FROM my_table10;
+

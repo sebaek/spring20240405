@@ -28,5 +28,10 @@ public class Controller33 {
         List<MyBean332> obj = mapper.select2();
         obj.forEach(System.out::println);
     }
+
+    // todo; 세번째 메소드 작성
+    //    mapper.select3() 호출한 결과
+    //    List<MyBean333> 타입으로 받아서 출력
+    //    SELECT * FROM my_table10
 }
 
