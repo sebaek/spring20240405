@@ -106,6 +106,6 @@ public class Controller32 {
 
     @PostMapping("sub7/update")
     public void method9(MyBean254Customer customer) {
-        System.out.println("customer = " + customer);
+        mapper.updateCustomer(customer);
     }
 }
