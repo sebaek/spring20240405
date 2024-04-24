@@ -97,3 +97,13 @@ VALUES ('2002-08-10', '1999-09-09 22:10:10');
 
 # todo; my_table8 에 두 컬럼(DATE, DATETIME) 정의하고
 #  레코드 넣고, 조회
+CREATE TABLE my_table8
+(
+    col1 DATE,
+    col2 DATETIME
+);
+INSERT INTO my_table8
+    (col1, col2)
+VALUES ('1722-05-01', '3031-01-31 23:59:59');
+SELECT *
+FROM my_table8;
