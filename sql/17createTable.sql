@@ -32,3 +32,18 @@ DESC my_table1;
 #  DESC로 테이블 확인
 #  INSERT로 레코드 추가
 #  SELECT 조회
+CREATE TABLE my_table2
+(
+    name VARCHAR(30),
+    age  VARCHAR(30)
+);
+DESC my_table2;
+INSERT INTO my_table2
+    (name, age)
+VALUES ('son', 33);
+SELECT *
+FROM my_table2;
+INSERT INTO my_table2
+    (name, age)
+VALUES ('lee', '강인');
+
