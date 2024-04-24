@@ -103,4 +103,9 @@ public class Controller32 {
             model.addAttribute("customer", c);
         }
     }
+
+    @PostMapping("sub7/update")
+    public void method9(MyBean254Customer customer) {
+        System.out.println("customer = " + customer);
+    }
 }
