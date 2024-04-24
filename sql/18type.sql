@@ -71,8 +71,10 @@ INSERT INTO my_table6
 VALUES (500, 203947234.22);
 SELECT *
 FROM my_table6;
+# ok
 INSERT INTO my_table6
 VALUES ('198374', '2937429.33');
+# 아래 코드는 안됨
 INSERT INTO my_table6
 VALUES ('one', 'two point three');
 
