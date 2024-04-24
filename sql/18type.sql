@@ -60,4 +60,21 @@ VALUES (10, 170.339);
 # todo ; 새 테이블 my_table6
 #  한 개의 정수 타입 컬럼, 한 개의 실수 타입 컬럼
 #  DESC 테이블, 레코드 추가, 조회,
+CREATE TABLE my_table6
+(
+    quantity INT,
+    price    DEC(20, 2)
+);
+DESC my_table6;
+INSERT INTO my_table6
+    (quantity, price)
+VALUES (500, 203947234.22);
+SELECT *
+FROM my_table6;
+INSERT INTO my_table6
+VALUES ('198374', '2937429.33');
+INSERT INTO my_table6
+VALUES ('one', 'two point three');
+
+
 # 날짜시간
