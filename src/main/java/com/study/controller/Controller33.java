@@ -147,5 +147,18 @@ public class Controller33 {
         mapper.insert4(data);
         return "redirect:/main33/sub11";
     }
+
+    // todo; 아래 두 개의 메소드를 잘 수정해서
+    //  my_table10 레코드 조회 및 입력 로직 완성
+    @GetMapping("sub12")
+    public String select12(Model model) {
+        return null;
+    }
+
+    @PostMapping("sub12")
+    public String insert12(MyBean333 data) {
+
+        return null;
+    }
 }
 
