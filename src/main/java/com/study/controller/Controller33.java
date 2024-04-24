@@ -6,7 +6,9 @@ import com.study.domain.MyBean333;
 import com.study.mapper.Mapper04;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDate;
@@ -91,9 +93,26 @@ public class Controller33 {
         obj.setPublished(LocalDate.now());
         obj.setPrice(10000.00);
         obj.setTitle("토트넘 주장");
-        
+
 
         mapper.insert5(obj);
+    }
+
+
+    @GetMapping("sub9")
+    public void select9(Model model) {
+        List<MyBean332> list = mapper.select2();
+        model.addAttribute("datas", list);
+    }
+
+    @PostMapping("sub9")
+    public String insert9(String str,
+                          String intValue,
+                          String realValue,
+                          String dateValue,
+                          String dateTimeValue) {
+        mapper.insert1(str, intValue, realValue, dateValue, dateTimeValue);
+        return "redirect:/main33/sub9";
     }
 
 }
