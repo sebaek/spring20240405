@@ -67,6 +67,22 @@ public class Controller33 {
                 LocalDateTime.parse("2020-09-09T09:09:09"));
     }
 
+    @GetMapping("sub7")
+    public void method7() {
+        MyBean332 obj = new MyBean332();
+        obj.setStringCol("hello ✋");
+        obj.setIntCol(7890);
+        obj.setDateCol(LocalDate.parse("2020-09-09"));
+        obj.setDateTimeCol(LocalDateTime.parse("2020-09-09T09:09:09"));
+        obj.setDecCol(99.78);
+
+        mapper.insert4(obj);
+    }
+
+    // todo ; 8번째 메소드 작성
+    //  my_table10 에 레코드 추가하기
+    //  MyBean333 활용
+    
 
 }
 

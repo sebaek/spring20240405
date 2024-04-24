@@ -59,4 +59,12 @@ public interface Mapper04 {
                 (#{title}, #{name}, #{age}, #{price}, #{published}, #{inserted})
             """)
     int insert3(String title, String name, int age, double price, LocalDate published, LocalDateTime inserted);
+
+    @Insert("""
+            INSERT INTO my_table9
+            (string_col, int_col, dec_col, date_col, date_time_col)
+            VALUES 
+            (#{stringCol}, #{intCol}, #{decCol}, #{dateCol}, #{dateTimeCol})
+            """)
+    int insert4(MyBean332 obj);
 }
