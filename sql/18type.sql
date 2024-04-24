@@ -80,3 +80,20 @@ VALUES ('one', 'two point three');
 
 
 # 날짜시간
+# DATE ; 날짜 (YYYY-MM-DD)
+# DATETIME ; 날짜시간 (YYYY-MM-DD HH:MM:SS)
+
+CREATE TABLE my_table7
+(
+    col1 DATE,
+    col2 DATETIME
+);
+DESC my_table7;
+SELECT *
+FROM my_table7;
+INSERT INTO my_table7
+    (col1, col2)
+VALUES ('2002-08-10', '1999-09-09 22:10:10');
+
+# todo; my_table8 에 두 컬럼(DATE, DATETIME) 정의하고
+#  레코드 넣고, 조회
