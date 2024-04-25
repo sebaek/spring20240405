@@ -39,8 +39,32 @@ ALTER TABLE my_table23
 DESC my_table23;
 
 
-
 # 컬럼 삭제 (주의!!)
+ALTER TABLE my_table23
+    DROP COLUMN state;
+# todo ; city 컬럼 삭제
+ALTER TABLE my_table23
+    DROP COLUMN city;
+DESC my_table23;
+
 
 # 컬럼 변경
-#   이름변경, 자료형/제약사항변경
+#   이름변경(주의!!)
+ALTER TABLE my_table23
+    RENAME COLUMN address TO town;
+DESC my_table23;
+
+# todo ; birth 를 birth_date 컬럼으로 이름 변경
+ALTER TABLE my_table23
+    RENAME COLUMN birth TO birth_date;
+DESC my_table23;
+
+# 자료형
+ALTER TABLE my_table23
+    MODIFY COLUMN price DEC(20, 2);
+DESC my_table23;
+
+# todo ; name 컬럼의 타입을 varchar(30) 변경
+    
+
+# 제약사항 변경
