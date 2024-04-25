@@ -78,3 +78,8 @@ ALTER TABLE my_table23
     MODIFY COLUMN name VARCHAR(10);
 
 # 제약사항 변경
+DESC my_table23;
+
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(20) UNIQUE;
+# todo; age 컬럼에 unique 제약사항 추가
