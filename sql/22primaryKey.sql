@@ -65,3 +65,20 @@ VALUES (2, 2, 1);
 INSERT INTO my_table21
     (col1, col2, col3)
 VALUES (NULL, 2, 1);
+
+# my_table22 만들기
+#  PRIMARY KEY
+#  NOT NULL UNIQUE
+#  제약사항없이
+
+# 여러 레코드 INSERT 해보기
+
+CREATE TABLE my_table22
+(
+    col1 VARCHAR(3) PRIMARY KEY,
+    col2 VARCHAR(3) NOT NULL UNIQUE,
+    col3 VARCHAR(3)
+);
+DESC my_table21;
+
+# CHECK, FOREIGN KEY
