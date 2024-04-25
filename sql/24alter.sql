@@ -106,3 +106,22 @@ ALTER TABLE my_table23
     MODIFY COLUMN name VARCHAR(20) NULL;
 
 # todo; age 컬럼에 not null 추가, 삭제
+ALTER TABLE my_table23
+    MODIFY COLUMN age INT NOT NULL;
+ALTER TABLE my_table23
+    MODIFY COLUMN age INT NULL;
+SELECT *
+FROM my_table23
+WHERE age IS NULL;;
+UPDATE my_table23
+SET age = 0
+WHERE age IS NULL;
+
+# DEFAULT 제약사항 추가/삭제
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(20) DEFAULT 'guest';
+ALTER TABLE my_table23
+    ALTER COLUMN name DROP DEFAULT;
+DESC my_table23;
+
+# todo; age 컬럼에 default 제약사항 추가/삭제
