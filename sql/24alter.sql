@@ -65,6 +65,16 @@ ALTER TABLE my_table23
 DESC my_table23;
 
 # todo ; name 컬럼의 타입을 varchar(30) 변경
-    
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(30);
+
+# 타입변경시 주의할 점 : 데이터를 잃어버리지 않도록 해야함
+INSERT INTO my_table23
+    (name, country)
+VALUES ('123456789012345', 'korea');
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(20);
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(10);
 
 # 제약사항 변경
