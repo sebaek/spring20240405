@@ -40,6 +40,20 @@ VALUES ('', '', '', '', '');
 SELECT *
 FROM customer;
 
+CREATE TABLE customer
+(
+    id         INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(3),
+    last_name  VARCHAR(3)
+);
+
+CREATE TABLE phone_number
+(
+    customer_id  INT,
+    phone_number VARCHAR(10)
+);
+
+# FOREIGN KEY : 외래키 제약사항
 
 
 # Second Normal Form (2NF, 제2정규화)
