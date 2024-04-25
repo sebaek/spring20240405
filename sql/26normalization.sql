@@ -49,11 +49,37 @@ CREATE TABLE customer
 
 CREATE TABLE phone_number
 (
+    id           INT PRIMARY KEY AUTO_INCREMENT,
     customer_id  INT,
-    phone_number VARCHAR(10)
+    phone_number VARCHAR(10),
+    FOREIGN KEY (customer_id) REFERENCES customer (id)
 );
+DROP TABLE customer;
+DROP TABLE phone_number;
 
 # FOREIGN KEY : 외래키 제약사항
+INSERT INTO customer
+    (first_name, last_name)
+VALUES ('son', 'hm'),
+       ('lee', 'ki');
+SELECT *
+FROM customer;
+INSERT INTO phone_number
+    (customer_id, phone_number)
+VALUES (1, '1234');
+INSERT INTO phone_number
+    (customer_id, phone_number)
+VALUES (1, '4321');
+INSERT INTO phone_number
+    (customer_id, phone_number)
+VALUES (2, '4321');
+
+INSERT INTO phone_number
+    (customer_id, phone_number)
+VALUES (3, '7890');
+
+SELECT *
+FROM phone_number;
 
 
 # Second Normal Form (2NF, 제2정규화)
