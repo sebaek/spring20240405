@@ -30,4 +30,12 @@ DESC my_table13;
 #   하나는 제약사항없이
 #   하나는 NOT NULL 만
 #   하나는 DEFAULT 만
-#   하나는 NOT NULL DEFAULT 
+#   하나는 NOT NULL DEFAULT
+CREATE TABLE my_table14
+(
+    col1 VARCHAR(10),
+    col2 VARCHAR(10) NOT NULL,
+    col3 VARCHAR(10)          DEFAULT 'abcde',
+    col4 VARCHAR(10) NOT NULL DEFAULT 'qwerty'
+);
+DESC my_table14;
