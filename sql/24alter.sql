@@ -140,4 +140,9 @@ ALTER TABLE my_table23
     MODIFY COLUMN name VARCHAR(20) NULL;
 
 # age 컬럼에 PRIMARY KEY 제약 사항 추가 / 삭제
+ALTER TABLE my_table23
+    ADD PRIMARY KEY (age);
+ALTER TABLE my_table23
+    DROP PRIMARY KEY;
+DESC my_table23;
 
