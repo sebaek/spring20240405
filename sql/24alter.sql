@@ -83,3 +83,12 @@ DESC my_table23;
 ALTER TABLE my_table23
     MODIFY COLUMN name VARCHAR(20) UNIQUE;
 # todo; age 컬럼에 unique 제약사항 추가
+ALTER TABLE my_table23
+    MODIFY COLUMN age INT UNIQUE;
+
+# UNIQUE 제약사항 삭제하기
+SHOW index FROM my_table23;
+ALTER TABLE my_table23
+    DROP INDEX age;
+DESC my_table23;
+# todo; name 컬럼의 UNIQUE 제약사항 삭제
