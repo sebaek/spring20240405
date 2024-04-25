@@ -92,3 +92,17 @@ ALTER TABLE my_table23
     DROP INDEX age;
 DESC my_table23;
 # todo; name 컬럼의 UNIQUE 제약사항 삭제
+SHOW index FROM my_table23;
+ALTER TABLE my_table23
+    DROP INDEX name;
+DESC my_table23;
+
+# NOT NULL 추가
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(20) NOT NULL;
+
+# NOT NULL 삭제
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(20) NULL;
+
+# todo; age 컬럼에 not null 추가, 삭제
