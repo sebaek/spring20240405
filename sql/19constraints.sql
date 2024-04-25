@@ -46,3 +46,14 @@ FROM my_table11
 WHERE col1 <> NULL;
 
 # my_table12 테이블 만들고 2개의 컬럼에 제약사항 NOT NULL 주기
+CREATE TABLE my_table12
+(
+    my_col VARCHAR(10) NOT NULL,
+    my_age INT         NOT NULL
+);
+INSERT INTO my_table12
+    (my_col, my_age)
+VALUES ('abc', 12);
+INSERT INTO my_table12
+    (my_col)
+VALUES ('def');
