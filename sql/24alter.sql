@@ -125,3 +125,19 @@ ALTER TABLE my_table23
 DESC my_table23;
 
 # todo; age 컬럼에 default 제약사항 추가/삭제
+ALTER TABLE my_table23
+    MODIFY COLUMN age INT DEFAULT 0;
+ALTER TABLE my_table23
+    ALTER COLUMN age DROP DEFAULT;
+
+# PRIMARY KEY 제약 사항 추가 / 삭제
+ALTER TABLE my_table23
+    ADD PRIMARY KEY (name);
+DESC my_table23;
+ALTER TABLE my_table23
+    DROP PRIMARY KEY;
+ALTER TABLE my_table23
+    MODIFY COLUMN name VARCHAR(20) NULL;
+
+# age 컬럼에 PRIMARY KEY 제약 사항 추가 / 삭제
+
