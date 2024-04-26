@@ -56,10 +56,15 @@ SELECT o.OrderID,
        CustomerName,
        e.EmployeeID,
        e.FirstName,
-       e.LastName
+       e.LastName,
+       s.ShipperID,
+       s.ShipperName
 FROM Orders o
          JOIN Customers c
               ON o.CustomerID = c.CustomerID
          JOIN Employees e
               ON o.EmployeeID = e.EmployeeID
-WHERE o.OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+         JOIN Shippers s
+              ON o.ShipperID = s.ShipperID
+WHERE o.OrderDate BETWEEN '1996-07-01' AND '1996-07-31'
+ORDER BY o.OrderDate, c.CustomerID, e.EmployeeID, s.ShipperID;
