@@ -27,7 +27,17 @@ FROM Orders o
 WHERE o.OrderID IS NULL;
 
 # 1996년에 주문한 적 있는 고객들 이름
+SELECT DISTINCT c.CustomerName
+FROM Orders o
+         JOIN Customers c
+              ON o.CustomerID = c.CustomerID
+WHERE o.OrderDate BETWEEN '1996-01-01' AND '1996-12-31'
+ORDER BY c.CustomerName;
 
-# 1996년에 한번도 주문한 적 없는 고객들 이름
+DELETE
+FROM Orders
+WHERE OrderDate >= '1997-01-01';
+
+# 1996년에 주문한 적 없는 고객들 이름
 
 
