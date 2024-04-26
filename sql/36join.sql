@@ -53,4 +53,11 @@ WHERE c.CustomerID = 90
 ORDER BY o.OrderDate;
 
 # 3번 직원이 주문을 처리한 날짜들을 오름차순 조회 (직원이름, 날짜)
+SELECT e.LastName, e.FirstName, o.OrderDate
+FROM Employees e
+         JOIN Orders o
+              ON e.EmployeeID = o.EmployeeID
+WHERE e.EmployeeID = 3
+ORDER BY o.OrderDate;
+
 
