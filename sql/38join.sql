@@ -68,3 +68,21 @@ FROM Orders o
               ON o.ShipperID = s.ShipperID
 WHERE o.OrderDate BETWEEN '1996-07-01' AND '1996-07-31'
 ORDER BY o.OrderDate, c.CustomerID, e.EmployeeID, s.ShipperID;
+
+# 1996년 7월 8일에 주문된 상품명 조회
+# Orders, OrderDetails, Products
+SELECT DISTINCT p.ProductName
+FROM Orders o
+         JOIN OrderDetails od
+              ON o.OrderID = od.OrderID
+         JOIN Products p
+              ON od.ProductID = p.ProductID
+WHERE o.OrderDate = '1996-07-08'
+ORDER BY ProductName;
+
+SELECT *
+FROM Products
+WHERE ProductID = 71;
+
+# Fløtemysost 상품을 구매한 고객의 이름과 주소, 주문일 조회
+# Customers, Orders, OrderDetails, Products
