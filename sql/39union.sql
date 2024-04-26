@@ -54,3 +54,18 @@ SELECT *
 FROM table10
          JOIN table11
               ON col1 = col_a;
+
+
+# UNION ALL
+
+SELECT *
+FROM table10
+         LEFT JOIN table11
+                   ON col1 = col_a
+
+UNION ALL
+
+SELECT *
+FROM table10
+         RIGHT JOIN table11
+                    ON col1 = col_a;
