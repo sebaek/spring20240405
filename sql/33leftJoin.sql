@@ -47,9 +47,35 @@ FROM table2
 
 # 1. 카테시안 곱
 # 2. INNER JOIN
-# 3. LEFT JOIN 
+# 3. LEFT JOIN
 
+DELETE
+FROM table3;
+DELETE
+FROM table4;
+INSERT INTO table3
+VALUES (4),
+       (5),
+       (6),
+       (3);
+INSERT INTO table4
+VALUES (5),
+       (6),
+       (7),
+       (7),
+       (8);
+SELECT *
+FROM table3
+         LEFT JOIN table4 ON col_a = col_b;
+SELECT *
+FROM table4
+         LEFT JOIN table3 ON col_a = col_b;
 
+# RIGHT OUTER JOIN
+SELECT *
+FROM table3
+         RIGHT JOIN table4 ON col_a = col_b;
 
+# table1, table2 을 사용해서 RIGHT 조인 해보기
 
 
