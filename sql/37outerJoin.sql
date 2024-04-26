@@ -45,3 +45,11 @@ FROM Orders o
                     ON o.CustomerID = c.CustomerID
 WHERE o.OrderID IS NULL;
 
+INSERT INTO Employees
+    (LastName, FirstName)
+VALUES ('흥민', '손'),
+       ('강인', '이');
+
+# 한번도 주문을 처리한 적 없는 직원명 조회
+
+
