@@ -40,3 +40,16 @@ FROM table1
 SELECT *
 FROM table2
          LEFT JOIN table1 ON col_a = col_b;
+
+
+# table3 (4), (5), (6), (3)
+# table4 (5), (6), (7), (7), (8)
+
+# 1. 카테시안 곱
+# 2. INNER JOIN
+# 3. LEFT JOIN 
+
+
+
+
+
