@@ -77,5 +77,17 @@ FROM table3
          RIGHT JOIN table4 ON col_a = col_b;
 
 # table1, table2 을 사용해서 RIGHT 조인 해보기
+# 1, 2, 2, 3, 4
+SELECT *
+FROM table1;
+# 3, 4, 5, 5
+SELECT *
+FROM table2;
+SELECT *
+FROM table1
+         RIGHT JOIN table2 ON col_a = col_b;
+SELECT *
+FROM table2
+         RIGHT JOIN table1 ON col_a = col_b;
 
 
