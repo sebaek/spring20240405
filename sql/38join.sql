@@ -32,4 +32,18 @@ VALUES (1, 2, 'pqr'),
        (2, 1, 'vwx'),
        (2, 2, 'yza');
 
+SELECT *
+FROM table7;
+SELECT *
+FROM table8;
+SELECT *
+FROM table9;
 
+# cartesian product
+# 7열, 24행
+SELECT *
+FROM table7 t7
+         JOIN table9 t9
+              ON t7.col1 = t9.col3
+         JOIN table8 t8
+              ON t8.cola = t9.colc;
