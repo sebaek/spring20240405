@@ -59,3 +59,31 @@ WHERE col_a = col_b;
 # table4 (col_b INT),  (7), (6), (7), (8)
 # #1 카테시안 곱 결과 보기(JOIN) -> 컬럼 수와 레코드 수 예측하기
 # #2 INNER JOIN 결과 보기 (JOIN ON) -> 컬럼 수와 레코드 수 예측하기, 결과 예측
+
+
+CREATE TABLE table3
+(
+    col_a INT
+);
+CREATE TABLE table4
+(
+    col_b INT
+);
+
+INSERT INTO table3
+    (col_a)
+VALUES (5),
+       (6),
+       (7);
+INSERT INTO table4
+    (col_b)
+VALUES (7),
+       (6),
+       (7),
+       (8);
+SELECT *
+FROM table3
+         JOIN table4;
+SELECT *
+FROM table3
+         JOIN table4 ON col_a = col_b;
