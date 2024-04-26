@@ -86,3 +86,13 @@ WHERE ProductID = 71;
 
 # Fløtemysost 상품을 구매한 고객의 이름과 주소, 주문일 조회
 # Customers, Orders, OrderDetails, Products
+SELECT c.CustomerName, c.Address, o.OrderDate
+FROM Customers c
+         JOIN Orders o
+              ON c.CustomerID = o.CustomerID
+         JOIN OrderDetails od
+              ON o.OrderID = od.OrderID
+         JOIN Products p
+              ON od.ProductID = p.ProductID
+WHERE p.ProductName = 'Fløtemysost'
+ORDER BY c.CustomerName, o.OrderDate;
