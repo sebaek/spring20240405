@@ -23,3 +23,28 @@ FROM employee e
               ON e.manager_id = m.id
 WHERE e.name = '손흥민';
 
+# 이정후의 상사는 ?
+SELECT m.name
+FROM employee e
+         JOIN employee m
+              ON e.manager_id = m.id
+WHERE e.name = '이정후';
+
+SELECT name
+FROM employee
+WHERE id = (SELECT manager_id
+            FROM employee
+            WHERE name = '이정후');
+
+# 손흥민의 직속 직원들 조회?
+SELECT e.name
+FROM employee m
+         JOIN employee e
+              ON m.id = e.manager_id
+WHERE m.name = '손흥민';
+
+SELECT name
+FROM employee
+WHERE manager_id = (SELECT id
+                    FROM employee
+                    WHERE name = '손흥민');
