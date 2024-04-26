@@ -47,3 +47,19 @@ FROM table7 t7
               ON t7.col1 = t9.col3
          JOIN table8 t8
               ON t8.cola = t9.colc;
+
+USE w3schools;
+
+SELECT o.OrderID,
+       o.OrderDate,
+       c.CustomerID,
+       CustomerName,
+       e.EmployeeID,
+       e.FirstName,
+       e.LastName
+FROM Orders o
+         JOIN Customers c
+              ON o.CustomerID = c.CustomerID
+         JOIN Employees e
+              ON o.EmployeeID = e.EmployeeID
+WHERE o.OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
