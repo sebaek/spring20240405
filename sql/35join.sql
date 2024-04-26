@@ -42,6 +42,25 @@ SELECT *
 FROM product
          JOIN category ON category_id = category.id;
 
+# ALIAS 별칭
+SELECT *
+FROM product AS p
+         JOIN category AS c ON category_id = c.id;
+
+# 필요한 컬럼만 조회
+SELECT p.name  AS 상품명,
+       c.name  AS 카테고리명,
+       p.price AS 가격
+FROM product AS p
+         JOIN category AS c ON category_id = c.id;
+
+# AS 생략 가능
+SELECT p.name  상품명,
+       c.name  카테고리명,
+       p.price 가격
+FROM product p
+         JOIN category c ON category_id = c.id;
+
 
 
 
