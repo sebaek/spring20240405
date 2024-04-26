@@ -51,5 +51,9 @@ VALUES ('흥민', '손'),
        ('강인', '이');
 
 # 한번도 주문을 처리한 적 없는 직원명 조회
-
+SELECT e.FirstName, e.LastName
+FROM Employees e
+         LEFT JOIN Orders o
+                   ON e.EmployeeID = o.EmployeeID
+WHERE o.OrderID IS NULL;
 
