@@ -76,5 +76,27 @@ WHERE p.CategoryID = 1;
 
 
 # 여러행 여러열 결과
+SELECT City, Country
+FROM Customers
+WHERE CustomerID IN (1, 2);
 
+SELECT CustomerName
+FROM Customers
+WHERE (City, Country)
+          IN (('Berlin', 'Germany'),
+              ('México D.F.', 'Mexico'));
+
+SELECT CustomerName
+FROM Customers
+WHERE (City, Country)
+          IN (SELECT City, Country
+              FROM Customers
+              WHERE CustomerID IN (1, 2));
+
+SELECT CustomerID, CustomerName, City, Country
+FROM Customers;
+
+SELECT CustomerName, City
+FROM (SELECT CustomerID, CustomerName, City, Country
+      FROM Customers) AS miniCustomers;
 
