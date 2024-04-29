@@ -100,3 +100,24 @@ SELECT CustomerName, City
 FROM (SELECT CustomerID, CustomerName, City, Country
       FROM Customers) AS miniCustomers;
 
+
+# 상관서브쿼리(속도가 좀 느린편, 조인으로 해결할 수 있는 지 고민)
+# 외부쿼리의 값이 내부 쿼리에 사용될 때
+
+# 각 고객의 주문 횟수
+SELECT CustomerName,
+       Country,
+       (SELECT COUNT(OrderID)
+        FROM Orders o
+        WHERE o.CustomerID = c.CustomerID)
+FROM Customers c;
+
+SELECT CustomerName, Country, COUNT(OrderID)
+FROM Customers c
+         LEFT JOIN Orders o
+                   ON c.CustomerID = o.CustomerID
+GROUP BY c.CustomerID;
+
+SELECT COUNT(OrderID)
+FROM Orders
+WHERE CustomerID = 5;
