@@ -27,3 +27,5 @@ FROM Orders o
               ON p.ProductID = od.ProductID
 WHERE o.CustomerID = 1
   AND o.OrderDate BETWEEN '1997-01-01' AND '1997-12-31';
+
+# todo; 멕시코 고객들이 1997년에 소비한 금액은?
