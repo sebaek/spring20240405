@@ -28,4 +28,13 @@ public class Controller34 {
         model.addAttribute("month", month);
 
     }
+
+    // todo ; 해당월의 고객별 구매금액 조회 (구매금액이 높은 순)
+    //   service01, mapper05 에 메소드만 추가해서 작성
+    //   필요하면 dto(java bean)도 작성
+    // /main34/sub2?year=1996&month=7
+    @GetMapping("sub2")
+    public void method2(Integer year, Integer month, Model model) {
+        //
+    }
 }
