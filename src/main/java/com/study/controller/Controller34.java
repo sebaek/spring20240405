@@ -28,5 +28,8 @@ public class Controller34 {
         List<Mapper05.EmployeeIncome> value = mapper.selectIncomeList(from, to);
         value.forEach(System.out::println);
         model.addAttribute("incomeList", value);
+        model.addAttribute("year", year);
+        model.addAttribute("month", month);
+
     }
 }
