@@ -79,3 +79,4 @@ FROM OrderDetails od
 GROUP BY o.CustomerID, p.ProductID
 ORDER BY 고객번호, 상품주문수 DESC;
 
+# 
