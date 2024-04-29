@@ -43,29 +43,43 @@
 </form>
 
 <hr>
-<div>
-    <table>
+<c:if test="${empty incomeList}">
+    <div>
 
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>last name</th>
-            <th>first name</th>
-            <th>매출액</th>
-        </tr>
-        </thead>
-        <tbody>
+        조회 결과가 없습니다.
+    </div>
+    <div>
+        1996년 7월부터 1997년 11월 중에 조회 해주세요.
+    </div>
+</c:if>
+<c:if test="${not empty incomeList}">
 
-        <c:forEach items="${incomeList}" var="item" varStatus="status">
+
+    <div>
+        <table>
+
+            <thead>
             <tr>
-                <td>${status.count}</td>
-                <td>${item.lastName}</td>
-                <td>${item.firstName}</td>
-                <td>${item.income}</td>
+                <th>#</th>
+                <th>last name</th>
+                <th>first name</th>
+                <th>매출액</th>
             </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+
+            <c:forEach items="${incomeList}" var="item" varStatus="status">
+                <tr>
+                    <td>${status.count}</td>
+                    <td>${item.lastName}</td>
+                    <td>${item.firstName}</td>
+                    <td>${item.income}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</c:if>
+    
 </body>
 </html>
