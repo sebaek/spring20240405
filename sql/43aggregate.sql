@@ -29,3 +29,13 @@ WHERE o.CustomerID = 1
   AND o.OrderDate BETWEEN '1997-01-01' AND '1997-12-31';
 
 # todo; 멕시코 고객들이 1997년에 소비한 금액은?
+SELECT SUM(p.Price * od.Quantity)
+FROM Products p
+         JOIN OrderDetails od
+              ON p.ProductID = od.ProductID
+         JOIN Orders o
+              ON od.OrderID = o.OrderID
+         JOIN Customers c
+              ON o.CustomerID = c.CustomerID
+WHERE c.Country = 'mexico'
+  AND OrderDate BETWEEN '1997-01-01' AND '1997-12-31';
