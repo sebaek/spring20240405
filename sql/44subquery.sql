@@ -121,3 +121,12 @@ GROUP BY c.CustomerID;
 SELECT COUNT(OrderID)
 FROM Orders
 WHERE CustomerID = 5;
+
+
+# todo; 각 상품별 총 매출금액
+SELECT ProductID,
+       ProductName,
+       (SELECT SUM(od.Quantity)
+        FROM OrderDetails od
+        WHERE od.ProductID = p.ProductID) * p.Price AS 매출액
+FROM Products p;
