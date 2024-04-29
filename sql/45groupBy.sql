@@ -56,3 +56,26 @@ GROUP BY o.CustomerID
 ORDER BY 매출액 DESC
 LIMIT 5;
 
+SELECT Country,
+       City,
+       COUNT(CustomerID)
+FROM Customers
+GROUP BY Country, City;
+
+# 고객별, 상품별 주문량
+
+SELECT c.CustomerId  고객번호,
+       c.CustomerName,
+       p.ProductID,
+       p.ProductName,
+       SUM(Quantity) 상품주문수
+FROM OrderDetails od
+         JOIN Orders o
+              ON od.OrderID = o.OrderID
+         JOIN Customers c
+              ON o.CustomerID = c.CustomerID
+         JOIN Products p
+              ON od.ProductID = p.ProductID
+GROUP BY o.CustomerID, p.ProductID
+ORDER BY 고객번호, 상품주문수 DESC;
+
