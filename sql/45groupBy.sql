@@ -23,3 +23,21 @@ FROM Categories c
               ON c.CategoryID = p.CategoryID
 GROUP BY c.CategoryID;
 
+SELECT e.EmployeeId,
+       e.LastName,
+       e.FirstName,
+       SUM(od.Quantity * p.Price) 매출액
+FROM Orders o
+         JOIN OrderDetails od
+              ON o.OrderID = od.OrderID
+         JOIN Products p
+              ON od.ProductID = p.ProductID
+         JOIN Employees e
+              ON o.EmployeeID = e.EmployeeID
+WHERE OrderDate BETWEEN '1997-01-01' AND '1997-01-31'
+GROUP BY e.EmployeeID
+ORDER BY 매출액 DESC;
+
+# 1997년 7월 기준 고객별 소비금액을 금액이 높은 순서로 조회
+
+
