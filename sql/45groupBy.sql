@@ -39,5 +39,20 @@ GROUP BY e.EmployeeID
 ORDER BY 매출액 DESC;
 
 # 1997년 7월 기준 고객별 소비금액을 금액이 높은 순서로 조회
-
+SELECT o.CustomerId,
+       c.CustomerName,
+       c.Address,
+       c.City,
+       SUM(p.Price * od.Quantity) 매출액
+FROM Orders o
+         JOIN OrderDetails od
+              ON o.OrderID = od.OrderID
+         JOIN Products p
+              ON od.ProductID = p.ProductID
+         JOIN Customers c
+              ON c.CustomerID = o.CustomerID
+WHERE OrderDate BETWEEN '1997-07-01' AND '1997-07-31'
+GROUP BY o.CustomerID
+ORDER BY 매출액 DESC
+LIMIT 5;
 
