@@ -27,6 +27,16 @@ HAVING customerNumber >= 5
 ORDER BY customerNumber DESC;
 
 # 97년 7월 매출액(SUM(상품가격*갯수))이 10000달러 이상인 직원들 조회
+SELECT e.LastName,
+       e.FirstName,
+       SUM(p.Price * od.Quantity) sumOfOrders
+FROM Orders o
+         JOIN Employees e ON o.EmployeeID = e.EmployeeID
+         JOIN OrderDetails od ON o.OrderID = od.OrderID
+         JOIN Products p ON od.ProductID = p.ProductID
+WHERE o.OrderDate BETWEEN '1997-07-01' AND '1997-07-31'
+GROUP BY e.EmployeeID
+HAVING sumOfOrders >= 10000;
 
 
 
