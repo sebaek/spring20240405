@@ -22,4 +22,20 @@ public class Controller35 {
     public void sub2() {
         service.transferMoney2();
     }
+
+    @GetMapping("sub3")
+    public void sub3() throws Exception {
+        // checked exception 은 rollback 안됨
+        service.transferMoney3();
+    }
+
+    @GetMapping("sub4")
+    public void sub4() throws Exception {
+        service.transferMoney4();
+    }
+
+    @GetMapping("sub5")
+    public void sub5() {
+        service.transferMoney5();
+    }
 }
