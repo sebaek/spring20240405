@@ -16,4 +16,19 @@ public class Controller37 {
     public void method1() {
         service.action1();
     }
+
+    @GetMapping("sub2")
+    public void method2() {
+        service.action2();
+    }
+
+    @GetMapping("sub3")
+    public void method3() {
+        service.action3();
+    }
+
+    @GetMapping("sub4")
+    public void method4() {
+        service.action4();
+    }
 }
