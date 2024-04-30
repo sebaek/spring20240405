@@ -30,4 +30,8 @@ public class Controller38 {
     public void path3() {
         System.out.println("어드민 권한이면 실행 가능");
     }
+
+    @GetMapping("/path4")
+    public void method4() {
+    }
 }
