@@ -31,4 +31,9 @@ public class Controller37 {
     public void method4() {
         service.action4();
     }
+
+    @GetMapping("sub5")
+    public void method5() {
+        service.action5();
+    }
 }

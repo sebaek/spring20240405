@@ -32,8 +32,15 @@ public class Service04 {
         MyBean258Employee e = new MyBean258Employee();
 
 //        e.setFirstName("kim");
-//        e.setFirstName("lee");
+        e.setFirstName("lee");
 
         mapper.query4(e);
+    }
+
+    public void action5() {
+        MyBean258Employee e = new MyBean258Employee();
+//        e.setLastName("son");
+        e.setFirstName("hm");
+        mapper.query5(e);
     }
 }
