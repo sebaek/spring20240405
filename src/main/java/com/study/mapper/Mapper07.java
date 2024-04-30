@@ -1,5 +1,6 @@
 package com.study.mapper;
 
+import com.study.domain.MyBean254Customer;
 import com.study.domain.MyBean258Employee;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -15,4 +16,12 @@ public interface Mapper07 {
             """)
     @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(MyBean258Employee e);
+
+    @Insert("""
+            INSERT INTO Customers
+            (CustomerName)
+            VALUES (#{name})
+            """)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    int insertCustomer(MyBean254Customer c);
 }

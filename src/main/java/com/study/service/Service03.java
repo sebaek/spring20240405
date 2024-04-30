@@ -24,11 +24,11 @@ public class Service03 {
 
     public void insertData2() {
         MyBean254Customer c = new MyBean254Customer();
-
+        c.setName("손흥민");
         // todo ; 새 고객데이터 입력하고
         //  다음 출력 코드에서 새 고객의 키가 출력되도록
         //  코드 작성
-        
+        mapper.insertCustomer(c);
         System.out.println(c.getId());
     }
 }
