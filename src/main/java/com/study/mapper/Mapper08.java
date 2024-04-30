@@ -79,4 +79,14 @@ public interface Mapper08 {
             </script>
             """)
     Object query5(MyBean258Employee e);
+
+
+    @Select("""
+            <script>
+            <bind name="patternKeyword" value='"%" + keyword + "%"' />
+            SELECT * FROM Employees
+            WHERE notes LIKE #{patternKeyword}
+            </script>
+            """)
+    List<MyBean258Employee> query6(String keyword);
 }

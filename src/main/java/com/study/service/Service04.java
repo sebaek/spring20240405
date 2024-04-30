@@ -6,6 +6,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 @Transactional(rollbackFor = Exception.class)
@@ -42,5 +44,11 @@ public class Service04 {
 //        e.setLastName("son");
         e.setFirstName("hm");
         mapper.query5(e);
+    }
+
+    public void action6(String keyword) {
+
+        List<MyBean258Employee> list = mapper.query6(keyword);
+        list.forEach(System.out::println);
     }
 }

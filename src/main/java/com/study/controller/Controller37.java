@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequiredArgsConstructor
@@ -35,5 +36,12 @@ public class Controller37 {
     @GetMapping("sub5")
     public void method5() {
         service.action5();
+    }
+
+    // /main37/sub6?q=bts
+    @GetMapping("sub6")
+    public void method6(
+            @RequestParam(value = "q", defaultValue = "") String keyword) {
+        service.action6(keyword);
     }
 }
