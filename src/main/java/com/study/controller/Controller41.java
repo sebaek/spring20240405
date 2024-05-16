@@ -33,4 +33,23 @@ public class Controller41 {
     public void sub4(@RequestBody Map<String, Object> map) {
         System.out.println("map = " + map);
     }
+
+    @PostMapping("sub5")
+    public void sub5(@RequestBody Map<String, Object> map) {
+        System.out.println("map = " + map);
+        Object name = map.get("name");
+        System.out.println("name.getClass() = " + name.getClass());
+
+        Object age = map.get("age");
+        System.out.println("age.getClass() = " + age.getClass());
+
+        Object item = map.get("item");
+        System.out.println("item.getClass() = " + item.getClass());
+
+        Object married = map.get("married");
+        System.out.println("married.getClass() = " + married.getClass());
+
+        Object team = map.get("team");
+        System.out.println("team.getClass() = " + team.getClass());
+    }
 }
