@@ -42,4 +42,14 @@ public class Controller42 {
                         "location", "런던"),
                 "item", List.of("축구공", "운동화", "유니폼"));
     }
+
+    @GetMapping("sub4")
+    @ResponseBody
+    public Map<String, Object> method4() {
+        return Map.of("city", "서울",
+                "height", 188.88,
+                "foods", List.of("pizza", "coffee"),
+                "desc", Map.of("team", "london", "location", "uk"),
+                "hasAccess", false);
+    }
 }
