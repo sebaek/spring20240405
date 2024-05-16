@@ -39,4 +39,16 @@ public class Controller40 {
         System.out.println("name = " + name);
         System.out.println("email = " + email);
     }
+
+    @PostMapping("/api/someurl3")
+    public void method6(@RequestParam("id") Integer id,
+                        @RequestParam("city") String city,
+                        @RequestParam("country") String country) {
+        System.out.println("id = " + id);
+        System.out.println("city = " + city);
+        System.out.println("country = " + country);
+    }
+
+    // /api/someurl4 , get/post 요청처리메소드 작성
+    
 }
