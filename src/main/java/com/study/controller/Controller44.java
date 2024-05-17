@@ -1,14 +1,12 @@
 package com.study.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.jwt.JwtClaimsSet;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.JwtEncoderParameters;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.Instant;
 import java.util.Map;
@@ -36,6 +34,19 @@ public class Controller44 {
 //                .claim("scope", "") // 권한
                 .build();
         return jwtEncoder.encode(JwtEncoderParameters.from(claims)).getTokenValue();
+    }
+
+    @GetMapping("all")
+    @ResponseBody
+    public String all() {
+        return "누구나 접근 가능한 경로";
+    }
+
+    @GetMapping("user")
+    @ResponseBody
+    @PreAuthorize("isAuthenticated()")
+    public String user() {
+        return "로그인 한 유저만 접근 가능한 경로";
     }
 
 }
